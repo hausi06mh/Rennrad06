@@ -1,18 +1,19 @@
-PROJEKT NIZZA 4.0
+PROJEKT NIZZA 5
 
-Enthalten:
-- Dashboard, Countdown, Streak, XP, Level
-- Monatsmissionen mit Kilometerziel, Höhenmeterziel und Obergrenze
-- Trainingsplan, 4-Wochen-Generator, Trainingstagebuch
-- Distanzziele 20–200 km mit und ohne Gepäck
-- Alpenmissionen und Kühtai-Erinnerung
-- virtuelle Reise Haibach–Nizza
-- Tour de l’Ain mit Teams, Etappen, Gesamt-, Sprint- und Bergwertung
-- Backup Export/Import, Offline-PWA
-
-Ohne Hosting testen:
+GitHub Pages Upload:
 1. ZIP entpacken.
-2. Auf PC/Mac im Ordner einen lokalen Server starten, z. B. python3 -m http.server 8000
-3. Im Browser http://localhost:8000 öffnen.
+2. Alle Dateien aus diesem Ordner direkt in das GitHub-Repository hochladen.
+3. Bestehende Dateien ersetzen.
+4. GitHub Pages aktualisiert denselben Link automatisch.
 
-Für iPhone-Installation braucht die PWA eine HTTPS-Adresse. Geeignete kostenlose Alternativen sind z. B. GitHub Pages oder Cloudflare Pages.
+Neu:
+- komplett neues, größeres Tour-App-Design
+- genau ein Workout pro Tag
+- Tages-, Wochen- und Monatsansicht
+- komplett editierbare Workouts
+- Europa-Karte mit Route und Meilensteinen
+- mehrere dauerhaft gespeicherte Touren
+- Teams und Fahrer mit Rollenfarben
+- eigene Etappen und Höhenprofilbilder
+- Tagesklassements und Gesamtwertungen getrennt
+- lokale Speicherung, Backup und PWA
