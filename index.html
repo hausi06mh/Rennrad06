@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08111f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Projekt Nizza 4.0</title><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div><div class="eyebrow">DEINE RADSPORT-KARRIERE</div><h1>Projekt Nizza <span>4.0</span></h1></div><div class="top-actions"><button id="installBtn" class="ghost hidden">Installieren</button><button onclick="exportData()" class="ghost">Backup</button></div></header>
+<main id="view"></main>
+<nav class="bottom-nav">
+<button class="nav-btn active" data-page="dashboard">⌂<small>Start</small></button>
+<button class="nav-btn" data-page="plan">▦<small>Plan</small></button>
+<button class="nav-btn" data-page="log">＋<small>Eintragen</small></button>
+<button class="nav-btn" data-page="missions">◎<small>Missionen</small></button>
+<button class="nav-btn" data-page="tour">♛<small>Tour</small></button>
+<button class="nav-btn" data-page="more">•••<small>Mehr</small></button>
+</nav>
+<dialog id="modal"><div id="modalContent"></div><button class="modal-close" onclick="document.querySelector('#modal').close()">×</button></dialog>
+<input type="file" id="importFile" accept="application/json" hidden>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
