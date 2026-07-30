@@ -1,19 +1,15 @@
-PROJEKT NIZZA 5
-
-GitHub Pages Upload:
-1. ZIP entpacken.
-2. Alle Dateien aus diesem Ordner direkt in das GitHub-Repository hochladen.
-3. Bestehende Dateien ersetzen.
-4. GitHub Pages aktualisiert denselben Link automatisch.
+PROJEKT NIZZA 8.0 – GitHub Pages
 
 Neu:
-- komplett neues, größeres Tour-App-Design
-- genau ein Workout pro Tag
-- Tages-, Wochen- und Monatsansicht
-- komplett editierbare Workouts
-- Europa-Karte mit Route und Meilensteinen
-- mehrere dauerhaft gespeicherte Touren
-- Teams und Fahrer mit Rollenfarben
-- eigene Etappen und Höhenprofilbilder
-- Tagesklassements und Gesamtwertungen getrennt
-- lokale Speicherung, Backup und PWA
+- dynamische virtuelle Route mit beweglichem Radfahrer
+- Fortschritt aus Training UND Form, nicht nur 1:1 Kilometer
+- Ausdauer, Kletterform, Belastbarkeit, Mehrtagesform und Regeneration
+- Abschnittstore und Meilenstein-Meldungen
+- zentraler Fahrerpool
+- Fahrersteine mit Rolle, Farbe, Nationalität und Stärke
+- Fahrer aus dem Pool mehreren Touren und Teams zuweisen
+- mehrere Touren erstellen, kopieren, archivieren und löschen
+- Etappen selbst erstellen, Profile hochladen, Ergebnisse und Punkte löschen
+- Fahrerauswahl nach Team über große Fahrersteine
+
+Installation: ZIP entpacken und alle Dateien im GitHub-Repository ersetzen.
