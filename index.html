@@ -1,1 +1,158 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#061527"><title>Projekt Nizza 12</title><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="stylesheet" href="styles.css"></head><body><div id="app"></div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Projekt Nizza</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PROJEKT NIZZA</div>
+        <h1>Training</h1>
+      </div>
+      <button class="icon-button" id="backupBtn" aria-label="Backup">⇩</button>
+    </header>
+
+    <main>
+      <section class="hero-card">
+        <div>
+          <div class="muted">Nächster Fokus</div>
+          <h2 id="nextWorkoutTitle">Noch kein Training geplant</h2>
+          <p id="nextWorkoutMeta">Lege deinen ersten Trainingstag an.</p>
+        </div>
+        <button class="primary-button" id="openNextBtn">Öffnen</button>
+      </section>
+
+      <section class="view-switch" aria-label="Ansicht wählen">
+        <button data-view="day">Tag</button>
+        <button data-view="week" class="active">Woche</button>
+        <button data-view="month">Monat</button>
+      </section>
+
+      <section class="period-nav">
+        <button class="ghost-button" id="prevPeriod">‹</button>
+        <div>
+          <div class="muted" id="periodLabel"></div>
+          <strong id="periodTitle"></strong>
+        </div>
+        <button class="ghost-button" id="nextPeriod">›</button>
+      </section>
+
+      <section id="calendarView" class="calendar-view"></section>
+    </main>
+
+    <button class="fab" id="addWorkoutBtn" aria-label="Training hinzufügen">＋</button>
+
+    <nav class="bottom-nav">
+      <button class="active">Training</button>
+      <button disabled>Karte</button>
+      <button disabled>Touren</button>
+      <button disabled>Statistik</button>
+    </nav>
+  </div>
+
+  <dialog id="workoutDialog">
+    <form method="dialog" id="workoutForm">
+      <div class="dialog-head">
+        <div>
+          <div class="eyebrow">TRAININGSTAG</div>
+          <h2 id="dialogTitle">Training anlegen</h2>
+        </div>
+        <button type="button" class="icon-button" id="closeDialog">✕</button>
+      </div>
+
+      <input type="hidden" id="workoutId" />
+
+      <label>Datum
+        <input type="date" id="dateInput" required />
+      </label>
+
+      <label>Titel
+        <input type="text" id="titleInput" placeholder="z. B. Grundlagenfahrt" required maxlength="80" />
+      </label>
+
+      <div class="two-col">
+        <label>Art
+          <select id="typeInput">
+            <option>Grundlage</option>
+            <option>Sweetspot</option>
+            <option>Bergtraining</option>
+            <option>Regeneration</option>
+            <option>Fußball</option>
+            <option>Punktspiel</option>
+            <option>Kraft</option>
+            <option>Ruhetag</option>
+          </select>
+        </label>
+
+        <label>Zone
+          <select id="zoneInput">
+            <option>-</option>
+            <option>Z1</option>
+            <option>Z2</option>
+            <option>Z3</option>
+            <option>Z4</option>
+            <option>Z5</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="two-col">
+        <label>Dauer geplant (Min.)
+          <input type="number" id="plannedDurationInput" min="0" step="5" />
+        </label>
+        <label>Dauer tatsächlich (Min.)
+          <input type="number" id="actualDurationInput" min="0" step="1" />
+        </label>
+      </div>
+
+      <div class="two-col">
+        <label>Kilometer
+          <input type="number" id="kmInput" min="0" step="0.1" />
+        </label>
+        <label>Höhenmeter
+          <input type="number" id="hmInput" min="0" step="1" />
+        </label>
+      </div>
+
+      <label>Details
+        <textarea id="detailsInput" rows="5" placeholder="Was genau steht an?"></textarea>
+      </label>
+
+      <label class="check-row">
+        <input type="checkbox" id="doneInput" />
+        <span>Training erledigt</span>
+      </label>
+
+      <div class="dialog-actions">
+        <button type="button" class="danger-button hidden" id="deleteWorkoutBtn">Löschen</button>
+        <div class="spacer"></div>
+        <button type="button" class="ghost-button" id="cancelBtn">Abbrechen</button>
+        <button type="submit" class="primary-button">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="backupDialog">
+    <div class="dialog-head">
+      <div>
+        <div class="eyebrow">DATENSICHERUNG</div>
+        <h2>Backup</h2>
+      </div>
+      <button type="button" class="icon-button" id="closeBackupDialog">✕</button>
+    </div>
+    <p class="muted">Exportiere regelmäßig eine Sicherung. Browser- oder Websitedaten können sonst verloren gehen.</p>
+    <div class="stack">
+      <button class="primary-button" id="exportBackupBtn">Backup exportieren</button>
+      <label class="upload-button">Backup importieren<input id="importBackupInput" type="file" accept="application/json" /></label>
+    </div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
