@@ -1,7 +1,7 @@
 {
-  "name": "Projekt Nizza 11",
-  "short_name": "Nizza 11",
-  "start_url": "./?v=6",
+  "name": "Projekt Nizza 11.1.1",
+  "short_name": "Nizza 11.1",
+  "start_url": "./?v=11.1",
   "display": "standalone",
   "background_color": "#07111f",
   "theme_color": "#07111f",

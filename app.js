@@ -148,5 +148,5 @@ function exportData(){const b=new Blob([JSON.stringify(data,null,2)],{type:'appl
 $('#importFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=normalize(JSON.parse(r.result));save('Backup importiert',false)}catch{alert('Ungültige Datei')}};r.readAsText(f)}
 function resetApp(){if(confirm('Alle Daten wirklich löschen?')){data=normalize(makeDefault());save('App zurückgesetzt',false)}}
 Object.assign(window,{closeModal,showFormHelp,editWorkout,toggleWorkout,movePlan,editEntry,deleteEntry,editTour,tourManager,chooseTour,editTeam,assignRiders,editStage,openStage,backToTour,addResult,selectRiderForStage,rankingDetails,editRankingEntry,clearResults,stagePoints,showOverall,editPoolRider,editRouteTarget,exportData,resetApp});
-if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
+if('serviceWorker' in navigator){addEventListener('load',async()=>{try{const reg=await navigator.serviceWorker.register('./service-worker.js?v=11.1',{updateViaCache:'none'});await reg.update();}catch(e){console.warn('SW update failed',e);}});}
 (async()=>{const stored=await dbGet();if(stored)data=normalize(stored);else await dbPut(data);render()})();
