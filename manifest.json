@@ -1,8 +1,1 @@
-{
-  "name": "Projekt Nizza V12 Beta Zeitwertung",
-  "short_name": "Nizza V12",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#061427",
-  "theme_color": "#061427"
-}
+{"name":"Projekt Nizza","short_name":"Nizza","start_url":"./","display":"standalone","background_color":"#03101e","theme_color":"#061426"}
