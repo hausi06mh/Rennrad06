@@ -3,115 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#07111f" />
-  <title>Projekt Nizza V12 – Schritt 2</title>
+  <meta name="theme-color" content="#061427" />
+  <title>Projekt Nizza V12 Alpha</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div>
-        <div class="eyebrow">PROJEKT NIZZA · V12 SCHRITT 2</div>
-        <h1 id="pageTitle">Start</h1>
-      </div>
-      <button class="icon-button" id="backupBtn" aria-label="Backup">⇩</button>
-    </header>
+  <header class="topbar">
+    <div><span class="eyebrow">DEINE RADSPORT-KARRIERE</span><h1>Projekt Nizza <b>V12 Alpha</b></h1></div>
+    <button id="quickAdd" class="round-btn" aria-label="Neu">+</button>
+  </header>
 
-    <main>
-      <section id="page-home" class="page active"></section>
+  <main id="app">
+    <section id="view-start" class="view active"></section>
+    <section id="view-training" class="view"></section>
+    <section id="view-map" class="view"></section>
+    <section id="view-tours" class="view"></section>
+    <section id="view-stats" class="view"></section>
+  </main>
 
-      <section id="page-training" class="page">
-        <section class="hero-card compact">
-          <div>
-            <div class="muted">Nächster Fokus</div>
-            <h2 id="nextWorkoutTitle">Noch kein Training geplant</h2>
-            <p id="nextWorkoutMeta">Lege deinen ersten Trainingstag an.</p>
-          </div>
-          <button class="primary-button" id="openNextBtn">Öffnen</button>
-        </section>
+  <nav class="bottom-nav">
+    <button data-view="start" class="active"><span>⌂</span>Start</button>
+    <button data-view="training"><span>▦</span>Training</button>
+    <button data-view="map"><span>◎</span>Karte</button>
+    <button data-view="tours"><span>♛</span>Touren</button>
+    <button data-view="stats"><span>▥</span>Statistik</button>
+  </nav>
 
-        <section class="view-switch" aria-label="Ansicht wählen">
-          <button data-view="day">Tag</button>
-          <button data-view="week" class="active">Woche</button>
-          <button data-view="month">Monat</button>
-        </section>
+  <dialog id="workoutDialog" class="modal"><form id="workoutForm" method="dialog">
+    <div class="modal-head"><h2 id="workoutTitle">Training</h2><button type="button" class="icon-btn" data-close>×</button></div>
+    <input type="hidden" id="workoutId" />
+    <label>Datum<input id="wDate" type="date" required /></label>
+    <label>Titel<input id="wTitle" required placeholder="z. B. Grundlagenfahrt" /></label>
+    <div class="grid2"><label>Art<select id="wType"><option>Grundlage</option><option>Sweetspot</option><option>Bergtraining</option><option>Regeneration</option><option>Fußball</option><option>Punktspiel</option><option>Kraft</option><option>Ruhetag</option></select></label><label>Zone<input id="wZone" placeholder="Z2" /></label></div>
+    <div class="grid2"><label>Geplant (Min.)<input id="wPlanned" type="number" min="0" /></label><label>Tatsächlich (Min.)<input id="wActual" type="number" min="0" /></label></div>
+    <div class="grid2"><label>Kilometer<input id="wKm" type="number" min="0" step="0.1" /></label><label>Höhenmeter<input id="wHm" type="number" min="0" /></label></div>
+    <label>Details<textarea id="wDetails" rows="4"></textarea></label>
+    <label class="check"><input id="wDone" type="checkbox" /> Erledigt</label>
+    <div class="actions"><button type="button" id="deleteWorkout" class="danger hidden">Löschen</button><button class="primary" value="save">Speichern</button></div>
+  </form></dialog>
 
-        <section class="period-nav">
-          <button class="ghost-button" id="prevPeriod">‹</button>
-          <div>
-            <div class="muted" id="periodLabel"></div>
-            <strong id="periodTitle"></strong>
-          </div>
-          <button class="ghost-button" id="nextPeriod">›</button>
-        </section>
+  <dialog id="tourDialog" class="modal"><form id="tourForm" method="dialog">
+    <div class="modal-head"><h2>Tour</h2><button type="button" class="icon-btn" data-close>×</button></div>
+    <input type="hidden" id="tourId" />
+    <label>Name<input id="tourName" required placeholder="Tour de l'Ain" /></label>
+    <div class="grid2"><label>Land<input id="tourCountry" placeholder="Frankreich" /></label><label>Etappen<input id="tourStages" type="number" min="1" value="3" /></label></div>
+    <label>Notiz<textarea id="tourNote" rows="3"></textarea></label>
+    <div class="actions"><button type="button" id="deleteTour" class="danger hidden">Löschen</button><button class="primary">Speichern</button></div>
+  </form></dialog>
 
-        <section id="calendarView" class="calendar-view"></section>
-        <button class="fab" id="addWorkoutBtn" aria-label="Training hinzufügen">＋</button>
-      </section>
+  <dialog id="riderDialog" class="modal"><form id="riderForm" method="dialog">
+    <div class="modal-head"><h2>Fahrer</h2><button type="button" class="icon-btn" data-close>×</button></div>
+    <input type="hidden" id="riderId" />
+    <label>Name<input id="riderName" required /></label>
+    <div class="grid2"><label>Nationalität<input id="riderNation" placeholder="Lettland" /></label><label>Stärke<input id="riderRating" type="number" min="1" max="99" value="70" /></label></div>
+    <label>Rolle<select id="riderRole"><option value="gc">Klassement</option><option value="climber">Bergfahrer</option><option value="sprinter">Sprinter</option><option value="helper">Helfer</option><option value="puncheur">Etappenjäger</option></select></label>
+    <div class="actions"><button type="button" id="deleteRider" class="danger hidden">Löschen</button><button class="primary">Speichern</button></div>
+  </form></dialog>
 
-      <section id="page-map" class="page"></section>
-      <section id="page-tours" class="page"></section>
-      <section id="page-riders" class="page"></section>
-      <section id="page-stats" class="page"></section>
-      <section id="page-settings" class="page"></section>
-    </main>
+  <dialog id="detailDialog" class="modal"><div class="modal-head"><h2 id="detailTitle">Details</h2><button type="button" class="icon-btn" data-close>×</button></div><div id="detailBody"></div></dialog>
 
-    <nav class="bottom-nav">
-      <button data-page="home" class="active"><span>⌂</span>Start</button>
-      <button data-page="training"><span>◫</span>Training</button>
-      <button data-page="map"><span>⌖</span>Karte</button>
-      <button data-page="tours"><span>♛</span>Touren</button>
-      <button data-page="stats"><span>▥</span>Statistik</button>
-    </nav>
-  </div>
-
-  <dialog id="workoutDialog">
-    <form method="dialog" id="workoutForm">
-      <div class="dialog-head"><div><div class="eyebrow">TRAININGSTAG</div><h2 id="dialogTitle">Training anlegen</h2></div><button type="button" class="icon-button" id="closeDialog">✕</button></div>
-      <input type="hidden" id="workoutId" />
-      <label>Datum<input type="date" id="dateInput" required /></label>
-      <label>Titel<input type="text" id="titleInput" placeholder="z. B. Grundlagenfahrt" required maxlength="80" /></label>
-      <div class="two-col">
-        <label>Art<select id="typeInput"><option>Grundlage</option><option>Sweetspot</option><option>Bergtraining</option><option>Regeneration</option><option>Fußball</option><option>Punktspiel</option><option>Kraft</option><option>Ruhetag</option></select></label>
-        <label>Zone<select id="zoneInput"><option>-</option><option>Z1</option><option>Z2</option><option>Z3</option><option>Z4</option><option>Z5</option></select></label>
-      </div>
-      <div class="two-col"><label>Dauer geplant (Min.)<input type="number" id="plannedDurationInput" min="0" step="5" /></label><label>Dauer tatsächlich (Min.)<input type="number" id="actualDurationInput" min="0" step="1" /></label></div>
-      <div class="two-col"><label>Kilometer<input type="number" id="kmInput" min="0" step="0.1" /></label><label>Höhenmeter<input type="number" id="hmInput" min="0" step="1" /></label></div>
-      <label>Details<textarea id="detailsInput" rows="5" placeholder="Was genau steht an?"></textarea></label>
-      <label class="check-row"><input type="checkbox" id="doneInput" /><span>Training erledigt</span></label>
-      <div class="dialog-actions"><button type="button" class="danger-button hidden" id="deleteWorkoutBtn">Löschen</button><div class="spacer"></div><button type="button" class="ghost-button" id="cancelBtn">Abbrechen</button><button type="submit" class="primary-button">Speichern</button></div>
-    </form>
-  </dialog>
-
-  <dialog id="riderDialog">
-    <form method="dialog" id="riderForm">
-      <div class="dialog-head"><div><div class="eyebrow">FAHRERPOOL</div><h2 id="riderDialogTitle">Fahrer anlegen</h2></div><button type="button" class="icon-button" id="closeRiderDialog">✕</button></div>
-      <input type="hidden" id="riderId" />
-      <label>Name<input id="riderName" required maxlength="70" /></label>
-      <div class="two-col"><label>Nationalität<input id="riderNation" placeholder="z. B. Lettland" /></label><label>Stärke<input id="riderRating" type="number" min="1" max="99" value="70" /></label></div>
-      <label>Rolle<select id="riderRole"><option value="gc">Klassement</option><option value="climber">Bergfahrer</option><option value="sprinter">Sprinter</option><option value="helper">Helfer</option><option value="stage">Etappenjäger</option></select></label>
-      <div class="dialog-actions"><button type="button" class="danger-button hidden" id="deleteRiderBtn">Löschen</button><div class="spacer"></div><button type="button" class="ghost-button" id="cancelRiderBtn">Abbrechen</button><button type="submit" class="primary-button">Speichern</button></div>
-    </form>
-  </dialog>
-
-  <dialog id="tourDialog">
-    <form method="dialog" id="tourForm">
-      <div class="dialog-head"><div><div class="eyebrow">TOUR</div><h2 id="tourDialogTitle">Tour anlegen</h2></div><button type="button" class="icon-button" id="closeTourDialog">✕</button></div>
-      <input type="hidden" id="tourId" />
-      <label>Name<input id="tourName" required maxlength="80" /></label>
-      <div class="two-col"><label>Land<input id="tourCountry" /></label><label>Farbe<input id="tourColor" type="color" value="#ffd400" /></label></div>
-      <label>Beschreibung<textarea id="tourDescription" rows="4"></textarea></label>
-      <div class="dialog-actions"><button type="button" class="danger-button hidden" id="deleteTourBtn">Löschen</button><div class="spacer"></div><button type="button" class="ghost-button" id="cancelTourBtn">Abbrechen</button><button type="submit" class="primary-button">Speichern</button></div>
-    </form>
-  </dialog>
-
-  <dialog id="backupDialog">
-    <div class="dialog-head"><div><div class="eyebrow">DATENSICHERUNG</div><h2>Backup</h2></div><button type="button" class="icon-button" id="closeBackupDialog">✕</button></div>
-    <p class="muted">Sichere Training, Fahrer und Touren regelmäßig.</p>
-    <div class="stack"><button class="primary-button" id="exportBackupBtn">Backup exportieren</button><label class="upload-button">Backup importieren<input id="importBackupInput" type="file" accept="application/json" /></label></div>
-  </dialog>
-
-  <script src="app.js" defer></script>
+  <script src="app.js"></script>
 </body>
 </html>
