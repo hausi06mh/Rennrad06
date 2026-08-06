@@ -1,8 +1,8 @@
 {
-  "name": "Projekt Nizza V12 Beta Fix 6",
-  "short_name": "Nizza V12.6",
-  "start_url": "./",
+  "name": "Projekt Nizza Fix 7",
+  "short_name": "Nizza Fix 7",
+  "start_url": "./?v=7",
   "display": "standalone",
-  "background_color": "#061427",
-  "theme_color": "#061427"
+  "background_color": "#03101e",
+  "theme_color": "#061426"
 }

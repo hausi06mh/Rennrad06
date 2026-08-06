@@ -1,0 +1,12 @@
+PROJEKT NIZZA – FIX 7
+
+WICHTIG: Nicht die ZIP-Datei in GitHub liegen lassen.
+
+1. ZIP auf dem iPhone entpacken.
+2. Im GitHub-Repository die alte index.html löschen oder ersetzen.
+3. Die neue index.html aus diesem Ordner in die oberste Ebene des Repositorys hochladen.
+4. Änderungen bestätigen (Commit changes).
+5. Website anschließend einmal mit ?v=7 öffnen, zum Beispiel: ...github.io/?v=7
+
+Erkennungsmerkmal: Oben steht deutlich „Nizza Manager“ und daneben „FIX 7“.
+Wenn dort weiterhin „V12 Beta Fix 5“ steht, ist noch die alte index.html online.

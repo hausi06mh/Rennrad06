@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#061426">
-<title>Projekt Nizza V12 Beta Fix 6 – Übersicht</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Projekt Nizza – Fix 7 neues Design</title>
 <style>
 :root{--bg:#03101e;--panel:#0c2542;--panel2:#123453;--line:#2b4f70;--text:#f4f8fc;--muted:#9fb3c9;--accent:#2edcc0;--blue:#2aa8ff;--yellow:#ffd400;--red:#ff6176;--green:#37d58b;--radius:22px}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:linear-gradient(#061426,#020912);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding-bottom:92px}button,input,select,textarea{font:inherit}.top{position:sticky;top:0;z-index:20;padding:18px 20px;background:rgba(4,16,30,.96);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.eyebrow{font-size:.72rem;letter-spacing:.22em;font-weight:800;color:#aac0d8}.top h1{margin:6px 0 0;font-size:1.45rem}.top h1 b{color:var(--accent)}.round{width:54px;height:54px;border:0;border-radius:50%;font-size:2rem;background:linear-gradient(135deg,var(--blue),var(--accent));color:#04101f;font-weight:900}main{max-width:900px;margin:auto;padding:16px}.view{display:none}.view.active{display:block}.card,.team-card,.stage-card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2,.section-head h3{margin:0}.muted{color:var(--muted)}.primary,.secondary,.danger,.tab,.icon{border:0;border-radius:14px;padding:12px 15px;color:white}.primary{background:linear-gradient(135deg,var(--blue),var(--accent));font-weight:800}.secondary{background:#122d4a;border:1px solid var(--line)}.danger{background:#4b1b29;color:#ffd0d7}.icon{width:44px;height:44px;padding:0;background:#153250;font-size:1.25rem}.bottom{position:fixed;z-index:25;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);background:#061426;border-top:1px solid var(--line);padding:9px 5px calc(9px + env(safe-area-inset-bottom))}.bottom button{border:0;background:none;color:#8399b2;display:flex;flex-direction:column;align-items:center;gap:4px}.bottom button.active{color:var(--accent);font-weight:800}.tabs{display:flex;gap:8px;overflow:auto;margin:12px 0}.tab{background:#102b48;border:1px solid var(--line);white-space:nowrap}.tab.active{background:var(--blue)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#071a2d;border:1px solid var(--line);border-radius:16px;padding:13px}.stat small{display:block;color:var(--muted)}.stat strong{font-size:1.25rem}.empty{text-align:center;color:var(--muted);padding:28px;border:1px dashed #3a5e7d;border-radius:18px}.team-card{border-left:8px solid var(--team,#2aa8ff)}.rider-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.rider{background:#09213a;border:1px solid var(--line);border-left:7px solid #7f8fa3;border-radius:16px;padding:13px}.rider.gc{border-left-color:var(--yellow)}.rider.climber{border-left-color:var(--red)}.rider.helper{border-left-color:var(--blue)}.rider.sprinter{border-left-color:var(--green)}.rider strong{display:block}.rider span{color:var(--muted);font-size:.85rem}.stage-card{display:flex;justify-content:space-between;align-items:center;gap:12px}.stage-card h3{margin:0 0 5px}.class-row{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.class-row .rank{font-weight:900;font-size:1.15rem}.class-row small{display:block;color:var(--muted);margin-top:3px}.class-row .value{text-align:right;font-weight:800;white-space:nowrap}.modal{width:min(94vw,650px);max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:24px;background:#091f36;color:white;padding:20px}.modal.full{width:100vw;height:100dvh;max-width:none;max-height:none;border-radius:0;border:0;margin:0;padding:0}.modal::backdrop{background:rgba(0,0,0,.78)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.modal-head h2{margin:0}.full-head{position:sticky;top:0;z-index:5;background:#061426;border-bottom:1px solid var(--line);padding:17px;display:flex;justify-content:space-between;align-items:center}.full-body{padding:16px;max-width:760px;margin:auto}.full-tabs{position:sticky;top:78px;z-index:4;background:#061426;border-bottom:1px solid var(--line);padding:9px 14px;display:flex;gap:8px;overflow:auto}label{display:block;color:#bfd0e2;font-weight:700;margin:12px 0}input,select,textarea{width:100%;margin-top:7px;padding:13px;border-radius:13px;border:1px solid #365d7e;background:#05182a;color:white}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.picker-team{margin-bottom:16px}.picker-team h3{margin:0 0 9px}.picker-rider{width:100%;text-align:left;background:#0b2845;border:1px solid var(--line);border-radius:15px;color:white;padding:13px;margin-bottom:8px}.mapbox{background:#082039;border:1px solid var(--line);border-radius:20px;padding:14px}.route{height:14px;background:#1a3c58;border-radius:99px;overflow:hidden;margin:18px 0}.route span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--accent))}.mapline{position:relative;height:130px;margin-top:12px}.mapline:before{content:"";position:absolute;left:6%;right:6%;top:64px;height:7px;border-radius:99px;background:#254761}.mapline .done{position:absolute;left:6%;top:64px;height:7px;border-radius:99px;background:var(--accent)}.mapline .bike{position:absolute;top:37px;transform:translateX(-50%);font-size:28px}.mapline .p{position:absolute;top:54px;width:22px;height:22px;border:4px solid var(--accent);background:white;border-radius:50%;transform:translateX(-50%)}.mapline .label{position:absolute;top:88px;transform:translateX(-50%);font-size:.72rem;color:var(--muted)}
@@ -33,7 +36,7 @@
 @media(max-width:560px){.class-row.editable{grid-template-columns:34px minmax(0,1fr) auto}.class-row.editable .entry-actions{grid-column:2/4;justify-content:flex-start}.full-head .header-title h2{max-width:38vw}.section-head{align-items:flex-start}.section-head>.compact-actions{justify-content:flex-end}}
 
 
-/* V12 Beta Fix 6 – mobile Übersicht */
+/* V12 Beta Fix 7 – mobile Übersicht */
 html,body{max-width:100%;overflow-x:hidden}
 body{background:#03101e}
 .top{background:#061426;padding:14px 16px;min-height:76px}
@@ -87,11 +90,19 @@ button{touch-action:manipulation}
  .page-actions .secondary{display:none}.pool-overview{grid-template-columns:36px minmax(0,1fr)}.pool-overview button{grid-column:1/3;width:100%}.tour-menu-button span{font-size:.65rem}.metric span{font-size:.58rem}.dashboard-actions{gap:4px}
 }
 
+
+/* FIX 7: eindeutig sichtbare neue Oberfläche */
+.top-brand{min-width:0}
+.top-title-row{display:flex;align-items:center;gap:8px;min-width:0}
+.version-chip{flex:0 0 auto;background:rgba(46,220,192,.15);border:1px solid rgba(46,220,192,.55);color:#62f0d8;border-radius:999px;padding:4px 8px;font-size:.64rem;font-weight:900;letter-spacing:.08em}
+.update-proof{margin:0 0 12px;background:linear-gradient(135deg,rgba(42,168,255,.18),rgba(46,220,192,.13));border:1px solid rgba(46,220,192,.45);border-radius:16px;padding:11px 13px;display:flex;align-items:center;gap:10px}
+.update-proof b{font-size:.82rem}.update-proof span{color:var(--muted);font-size:.75rem}
+@media(max-width:560px){.top-title-row h1{max-width:52vw}.version-chip{padding:4px 7px}.page-head{align-items:center}.page-actions{gap:6px}.page-actions button{font-size:.78rem;padding:9px 10px}.team-card{padding:14px}.rider-row{grid-template-columns:7px minmax(0,1fr) auto}.rider-action-icons button{width:40px;height:40px}}
 </style>
 </head>
 <body>
-<header class="top"><div><div class="eyebrow">DEINE RADSPORT-KARRIERE</div><h1>Projekt Nizza <b>V12 Beta Fix 6</b></h1></div><button id="quick" class="round">+</button></header>
-<main>
+<header class="top"><div class="top-brand"><div class="eyebrow">DEINE RADSPORT-KARRIERE</div><div class="top-title-row"><h1>Nizza Manager</h1><span class="version-chip">FIX 7</span></div></div><button id="quick" class="round" aria-label="Neu hinzufügen">+</button></header>
+<main><div class="update-proof"><b>✓ Neues übersichtliches Design aktiv</b><span>Fix 7</span></div>
 <section id="view-start" class="view active"></section>
 <section id="view-training" class="view"></section>
 <section id="view-map" class="view"></section>
@@ -104,6 +115,9 @@ button{touch-action:manipulation}
 <dialog id="modal" class="modal"></dialog>
 <script>
 'use strict';
+// Entfernt eventuell festhängende alte GitHub-Pages-/Home-Screen-Caches, ohne gespeicherte App-Daten zu löschen.
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{})}
+if('caches' in window){caches.keys().then(keys=>keys.forEach(k=>caches.delete(k))).catch(()=>{})}
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const KEY='projekt-nizza-v12-fix2';
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
