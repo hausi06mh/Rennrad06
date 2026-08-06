@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061426">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Projekt Nizza – FIX 9 DIREKT</title>
+<style>
+:root{--bg:#03101e;--panel:#0c2542;--panel2:#123453;--line:#2b4f70;--text:#f4f8fc;--muted:#9fb3c9;--accent:#2edcc0;--blue:#2aa8ff;--yellow:#ffd400;--red:#ff6176;--green:#37d58b;--radius:22px}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:linear-gradient(#061426,#020912);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding-bottom:92px}button,input,select,textarea{font:inherit}.top{position:sticky;top:0;z-index:20;padding:18px 20px;background:rgba(4,16,30,.96);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.eyebrow{font-size:.72rem;letter-spacing:.22em;font-weight:800;color:#aac0d8}.top h1{margin:6px 0 0;font-size:1.45rem}.top h1 b{color:var(--accent)}.round{width:54px;height:54px;border:0;border-radius:50%;font-size:2rem;background:linear-gradient(135deg,var(--blue),var(--accent));color:#04101f;font-weight:900}main{max-width:900px;margin:auto;padding:16px}.view{display:none}.view.active{display:block}.card,.team-card,.stage-card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2,.section-head h3{margin:0}.muted{color:var(--muted)}.primary,.secondary,.danger,.tab,.icon{border:0;border-radius:14px;padding:12px 15px;color:white}.primary{background:linear-gradient(135deg,var(--blue),var(--accent));font-weight:800}.secondary{background:#122d4a;border:1px solid var(--line)}.danger{background:#4b1b29;color:#ffd0d7}.icon{width:44px;height:44px;padding:0;background:#153250;font-size:1.25rem}.bottom{position:fixed;z-index:25;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);background:#061426;border-top:1px solid var(--line);padding:9px 5px calc(9px + env(safe-area-inset-bottom))}.bottom button{border:0;background:none;color:#8399b2;display:flex;flex-direction:column;align-items:center;gap:4px}.bottom button.active{color:var(--accent);font-weight:800}.tabs{display:flex;gap:8px;overflow:auto;margin:12px 0}.tab{background:#102b48;border:1px solid var(--line);white-space:nowrap}.tab.active{background:var(--blue)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#071a2d;border:1px solid var(--line);border-radius:16px;padding:13px}.stat small{display:block;color:var(--muted)}.stat strong{font-size:1.25rem}.empty{text-align:center;color:var(--muted);padding:28px;border:1px dashed #3a5e7d;border-radius:18px}.team-card{border-left:8px solid var(--team,#2aa8ff)}.rider-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.rider{background:#09213a;border:1px solid var(--line);border-left:7px solid #7f8fa3;border-radius:16px;padding:13px}.rider.gc{border-left-color:var(--yellow)}.rider.climber{border-left-color:var(--red)}.rider.helper{border-left-color:var(--blue)}.rider.sprinter{border-left-color:var(--green)}.rider strong{display:block}.rider span{color:var(--muted);font-size:.85rem}.stage-card{display:flex;justify-content:space-between;align-items:center;gap:12px}.stage-card h3{margin:0 0 5px}.class-row{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.class-row .rank{font-weight:900;font-size:1.15rem}.class-row small{display:block;color:var(--muted);margin-top:3px}.class-row .value{text-align:right;font-weight:800;white-space:nowrap}.modal{width:min(94vw,650px);max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:24px;background:#091f36;color:white;padding:20px}.modal.full{width:100vw;height:100dvh;max-width:none;max-height:none;border-radius:0;border:0;margin:0;padding:0}.modal::backdrop{background:rgba(0,0,0,.78)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.modal-head h2{margin:0}.full-head{position:sticky;top:0;z-index:5;background:#061426;border-bottom:1px solid var(--line);padding:17px;display:flex;justify-content:space-between;align-items:center}.full-body{padding:16px;max-width:760px;margin:auto}.full-tabs{position:sticky;top:78px;z-index:4;background:#061426;border-bottom:1px solid var(--line);padding:9px 14px;display:flex;gap:8px;overflow:auto}label{display:block;color:#bfd0e2;font-weight:700;margin:12px 0}input,select,textarea{width:100%;margin-top:7px;padding:13px;border-radius:13px;border:1px solid #365d7e;background:#05182a;color:white}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.picker-team{margin-bottom:16px}.picker-team h3{margin:0 0 9px}.picker-rider{width:100%;text-align:left;background:#0b2845;border:1px solid var(--line);border-radius:15px;color:white;padding:13px;margin-bottom:8px}.mapbox{background:#082039;border:1px solid var(--line);border-radius:20px;padding:14px}.route{height:14px;background:#1a3c58;border-radius:99px;overflow:hidden;margin:18px 0}.route span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--accent))}.mapline{position:relative;height:130px;margin-top:12px}.mapline:before{content:"";position:absolute;left:6%;right:6%;top:64px;height:7px;border-radius:99px;background:#254761}.mapline .done{position:absolute;left:6%;top:64px;height:7px;border-radius:99px;background:var(--accent)}.mapline .bike{position:absolute;top:37px;transform:translateX(-50%);font-size:28px}.mapline .p{position:absolute;top:54px;width:22px;height:22px;border:4px solid var(--accent);background:white;border-radius:50%;transform:translateX(-50%)}.mapline .label{position:absolute;top:88px;transform:translateX(-50%);font-size:.72rem;color:var(--muted)}
+
+/* Trainingskalender */
+.calendar-shell{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.calendar-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}.calendar-top h2{margin:4px 0 0}.calendar-modes{display:flex;gap:8px;overflow:auto;margin:0 0 12px}.calendar-nav{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:center;margin-bottom:14px}.calendar-nav button{height:46px}.calendar-period{text-align:center;font-weight:850;font-size:1.05rem}.week-list{display:grid;gap:11px}.day-card{background:#082039;border:1px solid var(--line);border-radius:18px;padding:13px;display:grid;grid-template-columns:74px 1fr;gap:13px;align-items:stretch;cursor:pointer}.day-card.today{border-color:var(--accent);box-shadow:0 0 0 2px rgba(46,220,192,.15)}.day-card.selected{background:#0d2d4d}.day-date{background:#06172a;border:1px solid #284c6c;border-radius:15px;padding:10px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center}.day-date small{color:var(--muted);font-weight:800;text-transform:uppercase}.day-date strong{font-size:1.65rem;line-height:1.05}.day-date span{font-size:.74rem;color:var(--muted)}.day-events{display:grid;gap:8px;min-width:0}.training-chip{width:100%;text-align:left;color:white;background:#103252;border:1px solid #355d7f;border-radius:14px;padding:11px}.training-chip.done{border-color:var(--green);background:#0b3a38}.training-chip strong{display:block;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.training-chip small{display:block;color:var(--muted);margin-top:5px}.day-empty{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);min-height:70px}.day-empty .secondary{flex:0 0 auto}.day-detail{background:#082039;border:1px solid var(--line);border-radius:20px;padding:18px}.day-detail h3{font-size:1.35rem;margin:6px 0 8px}.detail-date{font-size:1.05rem;font-weight:850}.detail-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.pill{background:#061a2d;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:#cfe0ef;font-size:.86rem}.detail-text{line-height:1.55;color:#d8e5f1}.month-weekdays,.month-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.month-weekdays{margin-bottom:6px}.month-weekdays div{text-align:center;color:var(--muted);font-size:.72rem;font-weight:850}.month-cell{min-height:78px;border:1px solid var(--line);border-radius:12px;background:#071a2d;color:white;padding:7px;text-align:left;overflow:hidden}.month-cell.blank{opacity:.18;pointer-events:none}.month-cell.today{border-color:var(--accent)}.month-cell.selected{background:#123b60}.month-number{display:block;font-weight:850;margin-bottom:5px}.month-event{display:block;font-size:.64rem;line-height:1.15;padding:3px 4px;border-radius:6px;background:#12436b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.month-event.done{background:#12604f}.calendar-legend{margin-top:12px;color:var(--muted);font-size:.8rem}.status-badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-size:.78rem;font-weight:800;background:#153250;color:#cddceb}.status-badge.done{background:#125449;color:#aaf3df}.training-form-hint{margin:-3px 0 10px;color:var(--muted);font-size:.84rem}
+.pool-toolbar{display:flex;gap:9px;flex-wrap:wrap}.pool-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}.pool-option{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;background:#082039;border:1px solid var(--line);border-radius:17px;padding:13px;margin-bottom:10px}.pool-option input{width:24px;height:24px;margin:0}.pool-option strong{display:block}.pool-option small{display:block;color:var(--muted);margin-top:3px}.team-actions{display:flex;gap:7px;flex-wrap:wrap}.rider button{margin-top:9px}.mini-danger{border:0;border-radius:10px;background:#4b1b29;color:#ffd0d7;padding:7px 9px}.pool-note{background:#071a2d;border:1px solid var(--line);border-radius:15px;padding:12px;color:var(--muted);margin-bottom:14px}.team-selected{display:inline-flex;align-items:center;gap:6px;background:#0f4a43;color:#baf8e8;border-radius:999px;padding:5px 9px;font-size:.78rem;font-weight:800}.team-not-selected{display:inline-flex;align-items:center;gap:6px;background:#172e47;color:#b8c8d8;border-radius:999px;padding:5px 9px;font-size:.78rem;font-weight:800}.row-between{display:flex;justify-content:space-between;gap:10px;align-items:center}.compact-actions{display:flex;gap:6px;flex-wrap:wrap}.compact-actions button{padding:9px 11px}.checkbox-list{display:grid;gap:9px}.checkbox-list label{margin:0}.danger-zone{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}
+@media(max-width:560px){.calendar-top{align-items:center}.calendar-top .primary{padding:11px 12px}.day-card{grid-template-columns:66px 1fr;padding:11px}.day-date strong{font-size:1.45rem}.month-cell{min-height:68px;padding:5px}.month-event{font-size:.58rem}.calendar-shell{padding:13px}}
+@media(max-width:560px){.stats{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.top h1{font-size:1.25rem}.rider-grid{grid-template-columns:1fr 1fr}}
+
+/* Durchgängige Bearbeiten-/Löschen-/Zurück-Navigation */
+.header-actions,.row-actions,.entry-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.full-head .header-main{display:flex;align-items:center;gap:10px;min-width:0}
+.full-head .header-title{min-width:0}.full-head .header-title h2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48vw}
+.back-btn{background:#153250;border:1px solid var(--line);color:white}
+.edit-btn{background:#153250;border:1px solid var(--line);color:#d7e7f6}
+.delete-btn{background:#4b1b29;border:1px solid #7a2b3f;color:#ffd8df}
+.stage-list-item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+.stage-open{border:0;background:none;color:white;text-align:left;padding:2px;min-width:0}.stage-open h3{margin:4px 0}.stage-open span{display:block}
+.stage-actions{display:flex;gap:7px}.stage-actions button{width:42px;height:42px;padding:0}
+.class-row.editable{grid-template-columns:42px minmax(0,1fr) auto auto}.entry-actions{justify-content:flex-end}.entry-actions button{width:38px;height:38px;padding:0;border-radius:11px}
+.rider-actions{display:flex;gap:7px;margin-top:9px}.rider-actions button{flex:1;margin:0;padding:8px 9px}
+.manage-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.confirm-note{background:#381a25;border:1px solid #6e3041;border-radius:14px;padding:12px;color:#ffd5dd;margin:12px 0}
+@media(max-width:560px){.class-row.editable{grid-template-columns:34px minmax(0,1fr) auto}.class-row.editable .entry-actions{grid-column:2/4;justify-content:flex-start}.full-head .header-title h2{max-width:38vw}.section-head{align-items:flex-start}.section-head>.compact-actions{justify-content:flex-end}}
+
+
+/* V12 Beta Fix 8 – mobile Übersicht */
+html,body{max-width:100%;overflow-x:hidden}
+body{background:#03101e}
+.top{background:#061426;padding:14px 16px;min-height:76px}
+.top>div{min-width:0}.top h1{font-size:1.18rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:72vw}.top .eyebrow{font-size:.64rem}
+.round{width:48px;height:48px;flex:0 0 48px;font-size:1.75rem}
+main{width:100%;max-width:900px;padding:14px 12px 20px;overflow-x:hidden}
+.card,.team-card,.stage-card{border-radius:18px;padding:16px;margin-bottom:12px}
+button{touch-action:manipulation}
+.primary,.secondary,.danger,.tab,.icon{min-height:44px}
+
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:2px 0 14px}
+.page-head-copy{min-width:0}.page-head h2{margin:4px 0 0;font-size:1.65rem}.page-actions{display:flex;gap:8px;flex:0 0 auto}.page-actions button{padding:10px 12px;white-space:nowrap}
+.pool-overview{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;align-items:center;background:#0a2139;border:1px solid var(--line);border-radius:18px;padding:13px 14px;margin-bottom:12px}
+.pool-overview-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#102f4e;font-size:1.25rem}.pool-overview h3{margin:0 0 3px;font-size:1rem}.pool-overview p{margin:0;font-size:.82rem}.pool-overview button{padding:9px 11px}
+.tour-switcher{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:center;background:#071a2d;border:1px solid var(--line);border-radius:15px;padding:9px 10px;margin:0 0 12px}.tour-switcher label{margin:0;color:var(--muted);font-size:.78rem;white-space:nowrap}.tour-switcher select{margin:0;padding:10px 38px 10px 12px;font-weight:800;background:#102d49}
+.tour-dashboard{background:linear-gradient(160deg,#123453,#0a2139);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+.dashboard-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:13px;border-bottom:1px solid rgba(107,143,174,.32)}.dashboard-head-copy{min-width:0}.dashboard-head h3{margin:0;font-size:1.35rem;overflow-wrap:anywhere}.dashboard-head p{margin:5px 0 0;font-size:.86rem}.dashboard-actions{display:flex;gap:7px;flex:0 0 auto}
+.small-icon{width:42px;height:42px;padding:0;border-radius:13px;display:grid;place-items:center;font-size:1rem}
+.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}.metric{min-width:0;background:#061a2d;border:1px solid var(--line);border-radius:15px;padding:12px 10px}.metric span{display:block;color:var(--muted);font-size:.68rem;line-height:1.15;min-height:2.3em}.metric strong{display:block;margin-top:5px;font-size:1.35rem}
+.tour-menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.tour-menu-button{border:1px solid #365d7e;border-radius:15px;background:#102d49;color:white;padding:12px 7px;min-width:0}.tour-menu-button b{display:block;font-size:1.15rem;margin-bottom:4px}.tour-menu-button span{font-size:.8rem;font-weight:800}
+
+.modal.full{overflow-x:hidden;background:#061426}.full-head{min-height:72px;padding:12px 13px;background:#061426}.full-head .header-main{min-width:0;flex:1}.full-head .header-title{min-width:0;flex:1}.full-head .header-title h2{max-width:none;font-size:1.18rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.full-head .eyebrow{font-size:.61rem}.full-body{width:100%;max-width:760px;padding:13px 12px 28px;overflow-x:hidden}.full-tabs{top:72px;padding:8px 12px;background:#061426}.full-tabs .tab{padding:9px 13px}
+.pool-summary-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:linear-gradient(145deg,#123453,#0a2139);border:1px solid var(--line);border-radius:18px;padding:15px;margin-bottom:12px}.pool-summary-card h3{margin:2px 0 4px;font-size:1.25rem}.pool-summary-card p{margin:0;font-size:.85rem}.pool-summary-card button{white-space:nowrap;padding:11px 13px}.pool-note{font-size:.84rem;line-height:1.4;padding:10px 12px;margin-bottom:12px}
+
+.team-card{padding:0;border-left:0;border-top:5px solid var(--team,#2aa8ff);overflow:hidden;background:#0c2946}
+.team-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:14px 14px 12px}.team-main{min-width:0}.team-main h3{margin:7px 0 3px;font-size:1.18rem;line-height:1.2;overflow-wrap:anywhere}.team-main p{margin:0;font-size:.82rem}.team-action-icons{display:flex;gap:7px;flex:0 0 auto}.team-action-icons button,.rider-action-icons button{width:40px;height:40px;padding:0;border-radius:12px;display:grid;place-items:center}
+.add-rider-wide{display:block;width:calc(100% - 28px);margin:0 14px 12px;padding:10px 12px;border-radius:13px}
+.rider-list{display:grid;gap:0;border-top:1px solid rgba(105,143,174,.28)}
+.rider-row{position:relative;display:grid;grid-template-columns:7px minmax(0,1fr) auto;gap:11px;align-items:center;min-width:0;background:#082039;border-bottom:1px solid rgba(105,143,174,.24);padding:11px 12px 11px 0}.rider-row:last-child{border-bottom:0}.role-bar{align-self:stretch;width:7px;border-radius:0 8px 8px 0;background:#7f8fa3}.rider-row.gc .role-bar{background:var(--yellow)}.rider-row.climber .role-bar{background:var(--red)}.rider-row.helper .role-bar{background:var(--blue)}.rider-row.sprinter .role-bar{background:var(--green)}.rider-copy{min-width:0}.rider-copy strong{display:block;font-size:1rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rider-copy span{display:block;color:var(--muted);font-size:.79rem;margin-top:3px}.rider-action-icons{display:flex;gap:6px;flex:0 0 auto}.rider-action-icons button{width:36px;height:36px;border-radius:11px;font-size:.88rem}
+.team-card .empty{margin:0 12px 12px;padding:20px}
+
+.section-head{min-width:0}.section-head>div{min-width:0}.compact-actions{flex:0 0 auto}
+.bottom{padding-top:7px}.bottom button{font-size:.72rem;min-width:0}.bottom button span{font-size:1.05rem}
+
+@media(max-width:560px){
+ .top{padding:12px 13px}.top h1{font-size:1.06rem;max-width:70vw}.round{width:46px;height:46px;flex-basis:46px}
+ main{padding:12px 10px 18px}
+ .page-head{align-items:center}.page-head h2{font-size:1.45rem}.page-actions{gap:6px}.page-actions button{font-size:.82rem;padding:9px 10px}
+ .pool-overview{grid-template-columns:40px minmax(0,1fr) auto;padding:11px;gap:9px}.pool-overview-icon{width:40px;height:40px}.pool-overview button{font-size:.78rem;padding:8px 9px}
+ .tour-switcher{grid-template-columns:1fr}.tour-switcher label{padding-left:2px}.tour-dashboard{padding:14px}.dashboard-head h3{font-size:1.2rem}.dashboard-head p{font-size:.8rem}.small-icon{width:39px;height:39px}
+ .metric-grid{gap:6px}.metric{padding:10px 7px}.metric span{font-size:.61rem}.metric strong{font-size:1.22rem}
+ .tour-menu-grid{gap:6px}.tour-menu-button{padding:11px 4px}.tour-menu-button b{font-size:1rem}.tour-menu-button span{font-size:.7rem}
+ .pool-summary-card{grid-template-columns:1fr}.pool-summary-card button{width:100%}
+ .full-head{padding:10px}.full-head .header-title h2{font-size:1.06rem}.full-head .header-actions{gap:5px}.full-head .header-actions .icon,.full-head .back-btn{width:40px;height:40px}
+ .full-body{padding:11px 10px 24px}.rider-grid{grid-template-columns:1fr}.team-card-header{padding:13px 12px 11px}.add-rider-wide{width:calc(100% - 24px);margin-left:12px;margin-right:12px}.rider-row{padding-right:10px;gap:9px}
+ .section-head{align-items:center}.section-head>.compact-actions{justify-content:flex-end}.section-head h3{font-size:1.08rem}
+ .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.stat{padding:10px 8px}.stat small{font-size:.65rem}.stat strong{font-size:1.05rem}
+}
+
+@media(max-width:370px){
+ .page-actions .secondary{display:none}.pool-overview{grid-template-columns:36px minmax(0,1fr)}.pool-overview button{grid-column:1/3;width:100%}.tour-menu-button span{font-size:.65rem}.metric span{font-size:.58rem}.dashboard-actions{gap:4px}
+}
+
+
+/* FIX 8: eindeutig sichtbare neue Oberfläche */
+.top-brand{min-width:0}
+.top-title-row{display:flex;align-items:center;gap:8px;min-width:0}
+.version-chip{flex:0 0 auto;background:rgba(46,220,192,.15);border:1px solid rgba(46,220,192,.55);color:#62f0d8;border-radius:999px;padding:4px 8px;font-size:.64rem;font-weight:900;letter-spacing:.08em}
+.update-proof{margin:0 0 12px;background:linear-gradient(135deg,rgba(42,168,255,.18),rgba(46,220,192,.13));border:1px solid rgba(46,220,192,.45);border-radius:16px;padding:11px 13px;display:flex;align-items:center;gap:10px}
+.update-proof b{font-size:.82rem}.update-proof span{color:var(--muted);font-size:.75rem}
+@media(max-width:560px){.top-title-row h1{max-width:52vw}.version-chip{padding:4px 7px}.page-head{align-items:center}.page-actions{gap:6px}.page-actions button{font-size:.78rem;padding:9px 10px}.team-card{padding:14px}.rider-row{grid-template-columns:7px minmax(0,1fr) auto}.rider-action-icons button{width:40px;height:40px}}
+
+
+/* FIX 8 – harte Mobile-Regeln */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{overscroll-behavior-x:none}
+main,.view,.card,.tour-dashboard,.pool-overview,.team-card,.rider-list,.rider-row{max-width:100%;min-width:0}
+button{max-width:100%;touch-action:manipulation}
+.modal.full,.modal.full[open]{position:fixed!important;inset:0!important;width:100%!important;max-width:100%!important;height:100dvh!important;max-height:100dvh!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow-x:hidden!important;overflow-y:auto!important;background:#061426!important}
+.full-head{width:100%;max-width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;min-height:68px;padding:10px 12px}
+.header-main{display:flex;align-items:center;gap:10px;min-width:0}
+.header-title{min-width:0}
+.full-head .header-title h2{margin:2px 0 0;max-width:100%;white-space:normal;overflow:visible;text-overflow:clip;font-size:1.14rem;line-height:1.15}
+.header-actions{display:flex;gap:6px;align-items:center;flex:0 0 auto}
+.build-chip{display:inline-flex;align-items:center;margin-left:7px;padding:3px 7px;border-radius:999px;background:rgba(46,220,192,.14);border:1px solid rgba(46,220,192,.48);color:#66efd9;font-size:.62rem;font-weight:900;vertical-align:middle}
+.full-body{width:100%;max-width:720px;margin:0 auto;padding:12px 10px 28px;overflow-x:hidden}
+.pool-summary-card{width:100%;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:13px}
+.pool-summary-card h3{font-size:1.12rem}
+.pool-summary-card button{padding:10px 12px}
+.pool-note{margin:0 0 10px;padding:9px 10px;border-radius:12px;background:#071a2d;border:1px solid rgba(75,111,143,.42)}
+#poolTeams{width:100%;display:grid;grid-template-columns:1fr;gap:10px}
+.team-card{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;border-radius:17px!important;overflow:hidden!important}
+.team-card-header{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:12px}
+.team-main h3{font-size:1.08rem;line-height:1.15;margin:6px 0 3px;word-break:normal;overflow-wrap:anywhere}
+.team-action-icons{display:flex;gap:5px}
+.team-action-icons button{width:38px!important;height:38px!important;min-width:38px!important;padding:0!important}
+.add-rider-wide{width:calc(100% - 24px)!important;margin:0 12px 10px!important;padding:9px 11px!important}
+.rider-list{width:100%;display:block}
+.rider-row{width:100%;max-width:100%;display:grid;grid-template-columns:6px minmax(0,1fr) auto;gap:9px;padding:10px 10px 10px 0;overflow:hidden}
+.rider-copy{min-width:0;overflow:hidden}
+.rider-copy strong{font-size:.96rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rider-copy span{font-size:.76rem}
+.rider-action-icons{display:flex;gap:5px;min-width:0}
+.rider-action-icons button{width:36px!important;height:36px!important;min-width:36px!important;padding:0!important;font-size:.82rem!important}
+.page-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.page-actions{display:flex;gap:6px;flex-wrap:nowrap}
+.page-actions button{white-space:nowrap}
+.tour-switcher{width:100%}
+.metric-grid,.tour-menu-grid{width:100%}
+
+@media(max-width:430px){
+ .top{padding:11px 12px}.top .eyebrow{font-size:.59rem}.top h1{font-size:1.02rem}.round{width:44px;height:44px}
+ main{padding:10px 9px 18px}
+ .update-proof{padding:9px 10px;margin-bottom:10px}.update-proof b{font-size:.75rem}.update-proof span{font-size:.68rem}
+ .full-head{padding:9px 10px;min-height:64px}.full-head .eyebrow{font-size:.56rem}.full-head .header-title h2{font-size:1.03rem}
+ .full-head .back-btn,.full-head [data-close]{width:39px!important;height:39px!important;min-width:39px!important}
+ .full-body{padding:10px 9px 24px}
+ .pool-summary-card{grid-template-columns:1fr}.pool-summary-card button{width:100%}
+ .team-card-header{padding:11px 10px}.team-main h3{font-size:1.02rem}
+ .add-rider-wide{width:calc(100% - 20px)!important;margin-left:10px!important;margin-right:10px!important}
+ .rider-row{grid-template-columns:6px minmax(0,1fr) auto;padding-right:8px;gap:7px}
+ .rider-action-icons{gap:4px}.rider-action-icons button{width:34px!important;height:34px!important;min-width:34px!important}
+ .page-head{grid-template-columns:1fr}.page-actions{width:100%}.page-actions button{flex:1}
+ .metric-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .bottom button{font-size:.68rem}
+}
+
+
+/* FIX 9 – automatische Restzeiten und Backup */
+.result-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.result-status span{background:#071a2d;border:1px solid var(--line);border-radius:13px;padding:10px;color:var(--muted);font-size:.78rem}.result-status b{display:block;color:white;font-size:1.05rem;margin-bottom:2px}.auto-tool{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(42,168,255,.13),rgba(46,220,192,.09));border:1px solid rgba(46,220,192,.38);border-radius:16px;padding:13px;margin:12px 0}.auto-tool b{display:block}.auto-tool p{margin:4px 0 0;color:var(--muted);font-size:.82rem}.auto-badge{display:inline-flex;vertical-align:middle;margin-left:5px;border:1px solid rgba(46,220,192,.55);background:rgba(46,220,192,.13);color:#65efd9;border-radius:999px;padding:2px 6px;font-size:.57rem;letter-spacing:.08em}.auto-row{background:rgba(46,220,192,.025)}.auto-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:15px 0}.auto-summary div{background:#061a2d;border:1px solid var(--line);border-radius:14px;padding:11px}.auto-summary span{display:block;color:var(--muted);font-size:.72rem}.auto-summary strong{display:block;margin-top:4px;font-size:1.05rem}.format-help{line-height:1.45;color:#cdddec;background:#071a2d;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:.82rem}.format-help code{display:inline-block;background:#102f4c;border:1px solid #355d7e;border-radius:7px;padding:2px 6px;color:#9ff7e8;margin:2px}.remaining-list{margin:12px 0;border:1px solid var(--line);border-radius:14px;background:#071a2d;padding:10px}.remaining-list summary{cursor:pointer;font-weight:800}.remaining-list>div{display:grid;gap:5px;margin-top:10px;max-height:210px;overflow:auto}.remaining-list span{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(75,111,143,.25);padding:5px 2px}.remaining-list small{color:var(--muted);text-align:right}.form-message{margin-top:10px}.error-box,.success-box{border-radius:13px;padding:11px 12px;margin:10px 0}.error-box{background:#4b1b29;border:1px solid #8e354b;color:#ffd3da}.success-box{background:#0b3a38;border:1px solid #1d7566;color:#b8faeb}
+@media(max-width:560px){.result-status,.auto-summary{grid-template-columns:1fr 1fr}.auto-tool{grid-template-columns:1fr}.auto-tool button{width:100%}.page-actions{flex-wrap:wrap!important}.page-actions button{flex:1 1 auto}}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="top-brand"><div class="eyebrow">DEINE RADSPORT-KARRIERE</div><div class="top-title-row"><h1>Projekt Nizza</h1><span class="version-chip">FIX 9 DIREKT</span></div></div><button id="quick" class="round" aria-label="Neu hinzufügen">+</button></header>
+<main><div class="update-proof"><b>✓ DIREKTVERSION geladen – automatische Restzeiten aktiv</b><span>FIX 9 DIREKT</span></div>
+<section id="view-start" class="view active"></section>
+<section id="view-training" class="view"></section>
+<section id="view-map" class="view"></section>
+<section id="view-tours" class="view"></section>
+<section id="view-stats" class="view"></section>
+</main>
+<nav class="bottom">
+<button data-view="start" class="active"><span>⌂</span>Start</button><button data-view="training"><span>▦</span>Training</button><button data-view="map"><span>◎</span>Karte</button><button data-view="tours"><span>♛</span>Touren</button><button data-view="stats"><span>▥</span>Statistik</button>
+</nav>
+<dialog id="modal" class="modal"></dialog>
+<script>
+'use strict';
+const BUILD='9.0.0';
+document.documentElement.dataset.build=BUILD;
+// Entfernt eventuell festhängende alte GitHub-Pages-/Home-Screen-Caches, ohne gespeicherte App-Daten zu löschen.
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{})}
+if('caches' in window){caches.keys().then(keys=>keys.forEach(k=>caches.delete(k))).catch(()=>{})}
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const KEY='projekt-nizza-v12-fix2';
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const roleLabel={gc:'Gesamtfahrer',climber:'Bergfahrer',helper:'Helfer',sprinter:'Sprinter'};
+let state=load();
+let trainingMode='week';
+const todayLocal=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const parseLocalDate=s=>{const [y,m,d]=String(s).split('-').map(Number);return new Date(y,m-1,d)};
+const localIso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const startMonday=d=>{const x=new Date(d);const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);x.setHours(0,0,0,0);return x};
+let trainingAnchor=parseLocalDate(todayLocal());
+let selectedTrainingDate=todayLocal();
+function fresh(){return{trainings:[],teamPool:[],tours:[],activeTourId:null}}
+function migrate(raw){
+ const out=Object.assign(fresh(),raw&&typeof raw==='object'?raw:{});
+ if(!Array.isArray(out.trainings))out.trainings=[];
+ if(!Array.isArray(out.teamPool))out.teamPool=[];
+ if(!Array.isArray(out.tours))out.tours=[];
+ const poolById=new Map();
+ out.teamPool=out.teamPool.filter(Boolean).map(team=>{team.id=team.id||uid();team.name=team.name||'Team';team.color=team.color||'#2aa8ff';if(!Array.isArray(team.riders))team.riders=[];team.riders=team.riders.filter(Boolean).map(r=>({id:r.id||uid(),name:r.name||'Fahrer',role:roleLabel[r.role]?r.role:'helper'}));poolById.set(team.id,team);return team});
+ for(const tour of out.tours){
+  tour.id=tour.id||uid();tour.name=tour.name||'Tour';if(!Array.isArray(tour.stages))tour.stages=[];if(!Array.isArray(tour.teamIds))tour.teamIds=[];
+  if(Array.isArray(tour.teams)){
+   for(const legacy of tour.teams){
+    if(!legacy)continue;legacy.id=legacy.id||uid();legacy.name=legacy.name||'Team';legacy.color=legacy.color||'#2aa8ff';if(!Array.isArray(legacy.riders))legacy.riders=[];
+    legacy.riders=legacy.riders.map(r=>({id:r.id||uid(),name:r.name||'Fahrer',role:roleLabel[r.role]?r.role:'helper'}));
+    if(!poolById.has(legacy.id)){out.teamPool.push(legacy);poolById.set(legacy.id,legacy)}
+    if(!tour.teamIds.includes(legacy.id))tour.teamIds.push(legacy.id);
+   }
+   delete tour.teams;
+  }
+  tour.teamIds=tour.teamIds.filter(id=>poolById.has(id));
+  for(const stage of tour.stages){
+   if(!Array.isArray(stage.results))stage.results=[];
+   stage.results=stage.results.filter(x=>x&&x.riderId).map((x,i)=>({...x,time:Math.max(0,+x.time||0),auto:!!x.auto,autoOrder:Number.isFinite(+x.autoOrder)?+x.autoOrder:i}));
+   if(!Array.isArray(stage.mountain))stage.mountain=[];
+   if(!Array.isArray(stage.sprint))stage.sprint=[];
+   if(typeof stage.autoPlan!=='string')stage.autoPlan='';
+  }
+ }
+ if(out.activeTourId&&!out.tours.some(t=>t.id===out.activeTourId))out.activeTourId=out.tours[0]?.id||null;
+ return out;
+}
+function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return fresh()}}
+function save(){state=migrate(state);localStorage.setItem(KEY,JSON.stringify(state));renderAll()}
+function downloadBackup(){
+ const stamp=new Date().toISOString().slice(0,10),payload={app:'Projekt Nizza',build:BUILD,exportedAt:new Date().toISOString(),state};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download=`projekt-nizza-backup-${stamp}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)
+}
+function openBackup(){
+ modal(`<div class="modal-head"><div><div class="eyebrow">DATENSICHERUNG</div><h2>Backup</h2></div><button data-close class="icon">×</button></div><p class="muted">Sichere alle Teams, Fahrer, Touren, Etappen und Wertungen oder lade ein vorhandenes JSON-Backup.</p><div class="actions"><button id="backupDownload" class="primary">Backup herunterladen</button><button id="backupChoose" class="secondary">Backup laden</button></div><input id="backupFile" type="file" accept="application/json,.json" style="display:none"><div id="backupMessage" class="form-message" aria-live="polite"></div>`);
+ $('#backupDownload').onclick=downloadBackup;
+ $('#backupChoose').onclick=()=>$('#backupFile').click();
+ $('#backupFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const parsed=JSON.parse(await file.text()),raw=parsed?.state||parsed?.data||parsed;if(!raw||typeof raw!=='object')throw new Error('Ungültiges Backup');if(!confirm('Aktuelle App-Daten durch dieses Backup ersetzen?'))return;state=migrate(raw);save();closeModal();show('tours');alert('Backup wurde erfolgreich geladen.')}catch(err){$('#backupMessage').innerHTML=`<div class="error-box">Backup konnte nicht geladen werden: ${esc(err.message||'Unbekannter Fehler')}</div>`}}
+}
+function modal(html,full=false){const d=$('#modal');d.className='modal'+(full?' full':'');d.innerHTML=html;if(!d.open)d.showModal();$$('[data-close]',d).forEach(b=>b.onclick=()=>d.close())}
+function show(view){$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));$$('.bottom button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));renderAll()}
+$$('.bottom button').forEach(b=>b.onclick=()=>show(b.dataset.view));
+$('#quick').onclick=()=>{const active=$('.bottom button.active')?.dataset.view||'start';if(active==='tours')openTourForm();else openTrainingForm(null,active==='training'?selectedTrainingDate:todayLocal())};
+function totals(){return state.trainings.filter(x=>x.done).reduce((a,x)=>{a.km+=+x.km||0;a.hm+=+x.hm||0;a.min+=+x.min||0;return a},{km:0,hm:0,min:0})}
+function renderAll(){renderStart();renderTraining();renderMap();renderTours();renderStats()}
+function renderStart(){const t=totals(),tour=activeTour();$('#view-start').innerHTML=`<article class="card"><div class="eyebrow">HEUTE IM BLICK</div><h2>${state.trainings.length?'Dein Plan steht':'Noch kein Training geplant'}</h2><p class="muted">Training, virtuelle Reise und deine Rundfahrten an einem Ort.</p><div class="stats"><div class="stat"><small>Kilometer</small><strong>${t.km.toFixed(0)}</strong></div><div class="stat"><small>Höhenmeter</small><strong>${t.hm.toFixed(0)}</strong></div><div class="stat"><small>Aktive Tour</small><strong>${esc(tour?.name||'–')}</strong></div></div></article><article class="card"><div class="section-head"><h3>Nächster Schritt</h3></div><button class="primary" onclick="show('training')">Training öffnen</button> <button class="secondary" onclick="show('tours')">Touren öffnen</button></article>`}
+function openTrainingForm(x=null,presetDate=null){
+ const date=x?.date||presetDate||selectedTrainingDate||todayLocal();
+ modal(`<div class="modal-head"><h2>${x?'Training bearbeiten':'Training anlegen'}</h2><button data-close class="icon">×</button></div><form id="trainingForm"><label>Datum<input id="trDate" type="date" value="${date}" required></label><label>Titel<input id="trTitle" value="${esc(x?.title||'')}" placeholder="z. B. Grundlagenfahrt" required></label><div class="grid2"><label>Art<select id="trType"><option ${x?.type==='Grundlage'?'selected':''}>Grundlage</option><option ${x?.type==='Lange Fahrt'?'selected':''}>Lange Fahrt</option><option ${x?.type==='Sweetspot'?'selected':''}>Sweetspot</option><option ${x?.type==='Bergtraining'?'selected':''}>Bergtraining</option><option ${x?.type==='Regeneration'?'selected':''}>Regeneration</option><option ${x?.type==='Fußball'?'selected':''}>Fußball</option><option ${x?.type==='Kraft'?'selected':''}>Kraft</option><option ${x?.type==='Mobility'?'selected':''}>Mobility</option><option ${x?.type==='Ruhetag'?'selected':''}>Ruhetag</option><option ${x?.type==='Sonstiges'?'selected':''}>Sonstiges</option></select></label><label>Zone / Intensität<input id="trZone" value="${esc(x?.zone||'')}" placeholder="z. B. Z2"></label></div><div class="grid2"><label>Kilometer<input id="trKm" type="number" step="0.1" min="0" value="${x?.km||0}"></label><label>Höhenmeter<input id="trHm" type="number" min="0" value="${x?.hm||0}"></label></div><label>Dauer Minuten<input id="trMin" type="number" min="0" value="${x?.min||0}"></label><label>Details<textarea id="trDetails" rows="4" placeholder="Was genau ist geplant?">${esc(x?.details||'')}</textarea></label><label style="display:flex;align-items:center;gap:10px"><input id="trDone" type="checkbox" ${x?.done?'checked':''} style="width:auto;margin:0"> Training erledigt</label><p class="training-form-hint">Plan und tatsächliche Einheit bleiben in diesem einen Eintrag.</p><div class="actions"><button class="primary">Speichern</button>${x?'<button type="button" id="delTraining" class="danger">Löschen</button>':''}</div></form>`);
+ $('#trainingForm').onsubmit=e=>{e.preventDefault();const obj={id:x?.id||uid(),date:$('#trDate').value,title:$('#trTitle').value.trim(),type:$('#trType').value,zone:$('#trZone').value.trim(),km:+$('#trKm').value||0,hm:+$('#trHm').value||0,min:+$('#trMin').value||0,details:$('#trDetails').value.trim(),done:$('#trDone').checked};const duplicate=state.trainings.find(a=>a.date===obj.date&&a.id!==obj.id);if(duplicate&&!confirm(`Am ${obj.date} gibt es schon "${duplicate.title}". Dieses Training ersetzen?`))return;state.trainings=state.trainings.filter(a=>a.id!==obj.id&&a.id!==duplicate?.id);state.trainings.push(obj);selectedTrainingDate=obj.date;trainingAnchor=parseLocalDate(obj.date);$('#modal').close();save();show('training')};
+ if(x)$('#delTraining').onclick=()=>{if(!confirm('Training wirklich löschen?'))return;state.trainings=state.trainings.filter(a=>a.id!==x.id);$('#modal').close();save()}
+}
+function trainingsOn(date){return state.trainings.filter(x=>x.date===date).sort((a,b)=>a.title.localeCompare(b.title,'de'))}
+function dayName(date,full=false){return new Intl.DateTimeFormat('de-DE',{weekday:full?'long':'short'}).format(date)}
+function fullDate(date){return new Intl.DateTimeFormat('de-DE',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(date)}
+function monthTitle(date){return new Intl.DateTimeFormat('de-DE',{month:'long',year:'numeric'}).format(date)}
+function metricText(x){const bits=[];if(x.type)bits.push(x.type);if(x.min)bits.push(`${x.min} Min`);if(x.zone)bits.push(x.zone);if(x.km)bits.push(`${x.km} km`);if(x.hm)bits.push(`${x.hm} hm`);return bits.join(' · ')||'Details öffnen'}
+function trainingChip(x){return `<button class="training-chip ${x.done?'done':''}" data-tr="${x.id}"><strong>${esc(x.title)}</strong><small>${esc(metricText(x))}${x.done?' · ✓ erledigt':''}</small></button>`}
+function dayCard(date){const iso=localIso(date),events=trainingsOn(iso),today=iso===todayLocal(),selected=iso===selectedTrainingDate;return `<article class="day-card ${today?'today':''} ${selected?'selected':''}" data-day-open="${iso}"><div class="day-date"><small>${esc(dayName(date))}</small><strong>${String(date.getDate()).padStart(2,'0')}</strong><span>${String(date.getMonth()+1).padStart(2,'0')}.${date.getFullYear()}</span></div><div class="day-events">${events.length?events.map(trainingChip).join(''):`<div class="day-empty"><span>Kein Training geplant</span><button class="secondary" data-add-date="${iso}">+ Eintragen</button></div>`}</div></article>`}
+function dayDetail(date){const iso=localIso(date),events=trainingsOn(iso);return `<div class="detail-date">${esc(fullDate(date))}</div>${events.length?events.map(x=>`<article class="day-detail"><div class="section-head"><div><span class="status-badge ${x.done?'done':''}">${x.done?'✓ Erledigt':'Geplant'}</span><h3>${esc(x.title)}</h3></div><div class="row-actions"><button class="icon edit-btn" data-tr="${x.id}" aria-label="Bearbeiten">✎</button><button class="icon delete-btn" data-del-tr="${x.id}" aria-label="Löschen">⌫</button></div></div><div class="detail-meta">${x.type?`<span class="pill">${esc(x.type)}</span>`:''}${x.zone?`<span class="pill">${esc(x.zone)}</span>`:''}${x.min?`<span class="pill">${x.min} Min</span>`:''}${x.km?`<span class="pill">${x.km} km</span>`:''}${x.hm?`<span class="pill">${x.hm} hm</span>`:''}</div>${x.details?`<p class="detail-text">${esc(x.details)}</p>`:'<p class="muted">Keine Details eingetragen.</p>'}<div class="actions"><button class="primary" data-tr="${x.id}">Öffnen & bearbeiten</button><button class="danger" data-del-tr="${x.id}">Training löschen</button></div></article>`).join(''):`<div class="empty"><h3>Kein Training geplant</h3><p>Lege für diesen Tag deine Einheit an.</p><button class="primary" data-add-date="${iso}">+ Training anlegen</button></div>`}`}
+function monthGrid(date){const y=date.getFullYear(),m=date.getMonth(),first=new Date(y,m,1),last=new Date(y,m+1,0),offset=(first.getDay()+6)%7;let html='<div class="month-weekdays">'+['Mo','Di','Mi','Do','Fr','Sa','So'].map(x=>`<div>${x}</div>`).join('')+'</div><div class="month-grid">';for(let i=0;i<offset;i++)html+='<div class="month-cell blank"></div>';for(let day=1;day<=last.getDate();day++){const d=new Date(y,m,day),iso=localIso(d),events=trainingsOn(iso);html+=`<button class="month-cell ${iso===todayLocal()?'today':''} ${iso===selectedTrainingDate?'selected':''}" data-month-date="${iso}"><span class="month-number">${day}</span>${events.slice(0,2).map(x=>`<span class="month-event ${x.done?'done':''}">${esc(x.title)}</span>`).join('')}${events.length>2?`<span class="month-event">+${events.length-2}</span>`:''}</button>`}return html+'</div>'}
+function bindTrainingCalendar(){
+ $('#addTraining').onclick=()=>openTrainingForm(null,selectedTrainingDate);
+ $$('[data-calendar-mode]').forEach(b=>b.onclick=()=>{trainingMode=b.dataset.calendarMode;renderTraining()});
+ $('#calPrev').onclick=()=>{trainingAnchor=trainingMode==='month'?new Date(trainingAnchor.getFullYear(),trainingAnchor.getMonth()-1,1):addDays(trainingAnchor,trainingMode==='week'?-7:-1);selectedTrainingDate=localIso(trainingAnchor);renderTraining()};
+ $('#calNext').onclick=()=>{trainingAnchor=trainingMode==='month'?new Date(trainingAnchor.getFullYear(),trainingAnchor.getMonth()+1,1):addDays(trainingAnchor,trainingMode==='week'?7:1);selectedTrainingDate=localIso(trainingAnchor);renderTraining()};
+ $('#calToday').onclick=()=>{trainingAnchor=parseLocalDate(todayLocal());selectedTrainingDate=todayLocal();renderTraining()};
+ $$('[data-tr]').forEach(b=>b.onclick=e=>{e.stopPropagation();openTrainingForm(state.trainings.find(x=>x.id===b.dataset.tr))});
+ $$('[data-del-tr]').forEach(b=>b.onclick=e=>{e.stopPropagation();deleteTraining(b.dataset.delTr)});
+ $$('[data-add-date]').forEach(b=>b.onclick=e=>{e.stopPropagation();selectedTrainingDate=b.dataset.addDate;openTrainingForm(null,b.dataset.addDate)});
+ $$('[data-day-open]').forEach(card=>card.onclick=e=>{if(e.target.closest('[data-tr],[data-del-tr],[data-add-date]'))return;selectedTrainingDate=card.dataset.dayOpen;trainingAnchor=parseLocalDate(selectedTrainingDate);trainingMode='day';renderTraining()});
+ $$('[data-month-date]').forEach(b=>b.onclick=()=>{selectedTrainingDate=b.dataset.monthDate;trainingAnchor=parseLocalDate(selectedTrainingDate);trainingMode='day';renderTraining()});
+}
+function renderTraining(){
+ const root=$('#view-training');let content='',period='';
+ if(trainingMode==='week'){const start=startMonday(trainingAnchor),end=addDays(start,6);period=`${String(start.getDate()).padStart(2,'0')}.${String(start.getMonth()+1).padStart(2,'0')}. – ${String(end.getDate()).padStart(2,'0')}.${String(end.getMonth()+1).padStart(2,'0')}.${end.getFullYear()}`;content=`<div class="week-list">${Array.from({length:7},(_,i)=>dayCard(addDays(start,i))).join('')}</div>`}
+ else if(trainingMode==='month'){period=monthTitle(trainingAnchor);content=monthGrid(trainingAnchor)}
+ else{const d=parseLocalDate(selectedTrainingDate);period=fullDate(d);content=dayDetail(d)}
+ root.innerHTML=`<div class="calendar-shell"><div class="calendar-top"><div><div class="eyebrow">TRAININGSKALENDER</div><h2>Wann mache ich was?</h2></div><button id="addTraining" class="primary">+ Einheit</button></div><div class="calendar-modes"><button data-calendar-mode="day" class="tab ${trainingMode==='day'?'active':''}">Tag</button><button data-calendar-mode="week" class="tab ${trainingMode==='week'?'active':''}">Woche</button><button data-calendar-mode="month" class="tab ${trainingMode==='month'?'active':''}">Monat</button></div><div class="calendar-nav"><button id="calPrev" class="secondary">‹</button><button id="calToday" class="secondary calendar-period">${esc(period)}</button><button id="calNext" class="secondary">›</button></div>${content}<div class="calendar-legend">Tippe auf einen Tag für die Tagesansicht. Tippe auf eine Einheit, um sie zu bearbeiten.</div></div>`;
+ bindTrainingCalendar()
+}
+function renderMap(){const t=totals(),progress=Math.min(100,t.km/1100*100);const points=[['Haibach',6],['Wasserburg',25],['Schwaz',43],['Landeck',57],['Bormio',70],['Nizza',94]];$('#view-map').innerHTML=`<div class="section-head"><div><div class="eyebrow">VIRTUELLE REISE</div><h2>Haibach → Nizza</h2></div></div><article class="mapbox"><div class="mapline"><div class="done" style="width:${progress*.88}%"></div><div class="bike" style="left:${6+progress*.88}%">🚴</div>${points.map(p=>`<i class="p" style="left:${p[1]}%"></i><span class="label" style="left:${p[1]}%">${p[0]}</span>`).join('')}</div><div class="route"><span style="width:${progress}%"></span></div><strong>${t.km.toFixed(0)} / 1100 km</strong><p class="muted">Der Radfahrer bewegt sich mit deinen als erledigt markierten Radkilometern.</p></article>`}
+function activeTour(){return state.tours.find(t=>t.id===state.activeTourId)||state.tours[0]||null}
+function selectedTeams(t){const ids=new Set(Array.isArray(t?.teamIds)?t.teamIds:[]);return state.teamPool.filter(team=>ids.has(team.id))}
+function allRiders(t){return selectedTeams(t).flatMap(team=>team.riders.map(r=>({...r,teamId:team.id,teamName:team.name}))) }
+function usedRiderIdsForTeam(team){return new Set(team.riders.map(r=>r.id))}
+function cleanupRiderIds(ids){
+ const set=ids instanceof Set?ids:new Set(ids);
+ for(const tour of state.tours)for(const stage of tour.stages){stage.results=stage.results.filter(x=>!set.has(x.riderId));stage.mountain=stage.mountain.filter(x=>!set.has(x.riderId));stage.sprint=stage.sprint.filter(x=>!set.has(x.riderId))}
+}
+
+function closeModal(){const d=$('#modal');if(d.open)d.close()}
+function deleteTraining(id){const x=state.trainings.find(t=>t.id===id);if(!x)return;if(!confirm(`Training „${x.title}“ wirklich löschen?`))return;state.trainings=state.trainings.filter(t=>t.id!==id);save();renderTraining()}
+function deleteTour(t){if(!t)return false;const counts={stages:t.stages.length,entries:t.stages.reduce((n,s)=>n+s.results.length+s.mountain.length+s.sprint.length,0)};if(!confirm(`Tour „${t.name}“ wirklich löschen?\n\n${counts.stages} Etappen und ${counts.entries} Wertungseinträge werden entfernt.`))return false;state.tours=state.tours.filter(x=>x.id!==t.id);state.activeTourId=state.tours[0]?.id||null;closeModal();save();show('tours');return true}
+function deleteStage(t,s){if(!confirm(`Etappe „${s.name}“ wirklich löschen? Alle Zeiten und Punkte dieser Etappe werden entfernt.`))return false;t.stages=t.stages.filter(x=>x.id!==s.id);closeModal();save();openTour(t.id,'stages');return true}
+function deleteTeamDirect(team){const used=state.tours.filter(t=>t.teamIds?.includes(team.id));const msg=used.length?`Team „${team.name}“ ist in ${used.length} Tour(en) ausgewählt. Das Team, seine Fahrer und deren Wertungen werden überall gelöscht. Fortfahren?`:`Team „${team.name}“ und alle Fahrer wirklich löschen?`;if(!confirm(msg))return false;const ids=usedRiderIdsForTeam(team);cleanupRiderIds(ids);state.teamPool=state.teamPool.filter(x=>x.id!==team.id);for(const t of state.tours)t.teamIds=(t.teamIds||[]).filter(id=>id!==team.id);save();openTeamPool();return true}
+function deleteRiderDirect(team,rider){if(!confirm(`Fahrer „${rider.name}“ wirklich löschen? Seine Wertungen werden ebenfalls entfernt.`))return false;cleanupRiderIds([rider.id]);team.riders=team.riders.filter(x=>x.id!==rider.id);save();openTeamPool();return true}
+function deleteStageEntry(t,s,key,riderId){const label=key==='results'?'Zeit':key==='mountain'?'Bergpunkte':'Sprintpunkte';if(!confirm(`${label} von ${riderName(t,riderId)} wirklich löschen?`))return;s[key]=s[key].filter(x=>x.riderId!==riderId);save();openStage(t,s,key==='results'?'stage':key)}
+function openTourForm(tour=null){
+ modal(`<div class="modal-head"><div class="header-main"><button id="tourFormBack" type="button" class="icon back-btn">‹</button><h2>${tour?'Tour bearbeiten':'Neue Tour'}</h2></div><button data-close class="icon">×</button></div><form id="tourForm"><label>Name<input id="tourName" value="${esc(tour?.name||'')}" placeholder="z. B. Tour de l'Ain" required></label><p class="muted">Teams wählst du anschließend aus deinem zentralen Team-Pool aus.</p><div class="actions"><button class="primary">${tour?'Änderungen speichern':'Tour erstellen'}</button>${tour?'<button type="button" id="deleteTourForm" class="danger">Tour löschen</button>':''}</div></form>`);
+ $('#tourFormBack').onclick=()=>tour?openTour(tour.id,'teams'):closeModal();
+ $('#tourForm').onsubmit=e=>{e.preventDefault();const name=$('#tourName').value.trim();if(tour){tour.name=name;closeModal();save();openTour(tour.id,'teams')}else{const t={id:uid(),name,teamIds:[],stages:[]};state.tours.push(t);state.activeTourId=t.id;closeModal();save();openTeamSelector(t)}};
+ if(tour)$('#deleteTourForm').onclick=()=>deleteTour(tour)
+}
+function openTeamForm(team=null){
+ modal(`<div class="modal-head"><div class="header-main"><button id="teamFormBack" type="button" class="icon back-btn">‹</button><h2>${team?'Team bearbeiten':'Team anlegen'}</h2></div><button data-close class="icon">×</button></div><form id="teamForm"><label>Teamname<input id="teamName" value="${esc(team?.name||'')}" required></label><label>Teamfarbe<input id="teamColor" type="color" value="${team?.color||'#2aa8ff'}"></label><div class="actions"><button class="primary">Speichern</button>${team?'<button type="button" id="deleteTeam" class="danger">Team löschen</button>':''}</div></form>`);
+ $('#teamFormBack').onclick=openTeamPool;
+ $('#teamForm').onsubmit=e=>{e.preventDefault();const name=$('#teamName').value.trim(),color=$('#teamColor').value;if(team){team.name=name;team.color=color}else state.teamPool.push({id:uid(),name,color,riders:[]});save();openTeamPool()};
+ if(team)$('#deleteTeam').onclick=()=>deleteTeamDirect(team)
+}
+function openRiderForm(team,rider=null){
+ modal(`<div class="modal-head"><div class="header-main"><button id="riderFormBack" type="button" class="icon back-btn">‹</button><h2>${rider?'Fahrer bearbeiten':'Fahrer anlegen'}</h2></div><button data-close class="icon">×</button></div><form id="riderForm"><label>Name<input id="riderName" value="${esc(rider?.name||'')}" required></label><label>Rolle<select id="riderRole"><option value="gc" ${rider?.role==='gc'?'selected':''}>Gesamtfahrer</option><option value="climber" ${rider?.role==='climber'?'selected':''}>Bergfahrer</option><option value="helper" ${rider?.role==='helper'?'selected':''}>Helfer</option><option value="sprinter" ${rider?.role==='sprinter'?'selected':''}>Sprinter</option></select></label><div class="actions"><button class="primary">Speichern</button>${rider?'<button type="button" id="deleteRider" class="danger">Fahrer löschen</button>':''}</div></form>`);
+ $('#riderFormBack').onclick=openTeamPool;
+ $('#riderForm').onsubmit=e=>{e.preventDefault();const data={name:$('#riderName').value.trim(),role:$('#riderRole').value};if(rider){rider.name=data.name;rider.role=data.role}else team.riders.push({id:uid(),...data});save();openTeamPool()};
+ if(rider)$('#deleteRider').onclick=()=>deleteRiderDirect(team,rider)
+}
+function teamCardHtml(team,editable=false,selected=false){return `<article class="team-card" style="--team:${team.color}"><div class="team-card-header"><div class="team-main"><div class="${selected?'team-selected':'team-not-selected'}">${selected?'✓ Für Tour ausgewählt':'Team-Pool'}</div><h3>${esc(team.name)}</h3><p class="muted">${team.riders.length} Fahrer</p></div>${editable?`<div class="team-action-icons"><button data-edit-team="${team.id}" class="secondary" aria-label="Team bearbeiten" title="Team bearbeiten">✎</button><button data-delete-team="${team.id}" class="danger" aria-label="Team löschen" title="Team löschen">⌫</button></div>`:''}</div>${editable?`<button data-add-rider="${team.id}" class="primary add-rider-wide">+ Fahrer hinzufügen</button>`:''}<div class="rider-list">${team.riders.map(r=>`<div class="rider-row ${r.role}"><i class="role-bar"></i><div class="rider-copy"><strong>${esc(r.name)}</strong><span>${roleLabel[r.role]}</span></div>${editable?`<div class="rider-action-icons"><button data-edit-rider="${r.id}" data-team-id="${team.id}" class="secondary" aria-label="Fahrer bearbeiten" title="Fahrer bearbeiten">✎</button><button data-delete-rider="${r.id}" data-team-id="${team.id}" class="danger" aria-label="Fahrer löschen" title="Fahrer löschen">⌫</button></div>`:''}</div>`).join('')||'<div class="empty">Noch kein Fahrer.</div>'}</div></article>`}
+function bindPoolEditor(){
+ $$('[data-edit-team]').forEach(b=>b.onclick=()=>openTeamForm(state.teamPool.find(x=>x.id===b.dataset.editTeam)));
+ $$('[data-delete-team]').forEach(b=>b.onclick=()=>deleteTeamDirect(state.teamPool.find(x=>x.id===b.dataset.deleteTeam)));
+ $$('[data-add-rider]').forEach(b=>b.onclick=()=>openRiderForm(state.teamPool.find(x=>x.id===b.dataset.addRider)));
+ $$('[data-edit-rider]').forEach(b=>b.onclick=()=>{const team=state.teamPool.find(x=>x.id===b.dataset.teamId);openRiderForm(team,team?.riders.find(r=>r.id===b.dataset.editRider))});
+ $$('[data-delete-rider]').forEach(b=>b.onclick=()=>{const team=state.teamPool.find(x=>x.id===b.dataset.teamId);const rider=team?.riders.find(r=>r.id===b.dataset.deleteRider);if(team&&rider)deleteRiderDirect(team,rider)})
+}
+function openTeamPool(){
+ const riderCount=state.teamPool.reduce((n,t)=>n+t.riders.length,0);
+ modal(`<div class="full-head"><div class="header-main"><button id="poolBack" class="icon back-btn" aria-label="Zurück">‹</button><div class="header-title"><div class="eyebrow">TEAMVERWALTUNG <span class="build-chip">FIX 8</span></div><h2>Teams & Fahrer</h2></div></div><button data-close class="icon" aria-label="Schließen">×</button></div><div class="full-body"><div class="pool-summary-card"><div><div class="eyebrow">DEIN TEAM-POOL</div><h3>${state.teamPool.length} Teams</h3><p class="muted">${riderCount} Fahrer insgesamt</p></div><button id="poolAddTeam" class="primary">+ Neues Team</button></div><div class="pool-note">Jedes Team wird hier einmal zentral verwaltet. Fahrer lassen sich direkt in der jeweiligen Mannschaft bearbeiten.</div><div id="poolTeams">${state.teamPool.map(t=>teamCardHtml(t,true,false)).join('')||'<div class="empty"><h3>Noch kein Team</h3><p>Lege deine erste Mannschaft an.</p></div>'}</div></div>`,true);
+ $('#poolBack').onclick=()=>{closeModal();show('tours')};$('#poolAddTeam').onclick=()=>openTeamForm();bindPoolEditor()
+}
+function openTeamSelector(t){
+ const selected=new Set(t.teamIds||[]);
+ modal(`<div class="modal-head"><div class="header-main"><button id="selectorBack" type="button" class="icon back-btn">‹</button><div><div class="eyebrow">${esc(t.name)}</div><h2>Teams auswählen</h2></div></div><button data-close class="icon">×</button></div><p class="muted">Markiere die Teams, die an dieser Tour teilnehmen. Globale Teams löschst du nur im Team-Pool.</p><form id="teamSelectForm"><div class="checkbox-list">${state.teamPool.map(team=>`<label class="pool-option"><input type="checkbox" value="${team.id}" ${selected.has(team.id)?'checked':''}><span><strong>${esc(team.name)}</strong><small>${team.riders.length} Fahrer</small></span></label>`).join('')||'<div class="empty">Lege zuerst Teams im Team-Pool an.</div>'}</div><div class="actions"><button class="primary" ${state.teamPool.length?'':'disabled'}>Auswahl speichern</button><button type="button" id="fromSelectorToPool" class="secondary">Team-Pool öffnen</button></div></form>`);
+ $('#selectorBack').onclick=()=>openTour(t.id,'teams');$('#fromSelectorToPool').onclick=openTeamPool;
+ $('#teamSelectForm').onsubmit=e=>{e.preventDefault();const next=[...$('#teamSelectForm').querySelectorAll('input[type=checkbox]:checked')].map(x=>x.value);const removed=(t.teamIds||[]).filter(id=>!next.includes(id));if(removed.length){const riderIds=new Set(state.teamPool.filter(team=>removed.includes(team.id)).flatMap(team=>team.riders.map(r=>r.id)));const hasEntries=t.stages.some(s=>s.results.some(x=>riderIds.has(x.riderId))||s.mountain.some(x=>riderIds.has(x.riderId))||s.sprint.some(x=>riderIds.has(x.riderId)));if(hasEntries&&!confirm('Für abgewählte Teams gibt es Wertungen. Diese Wertungseinträge werden aus dieser Tour entfernt. Fortfahren?'))return;for(const s of t.stages){s.results=s.results.filter(x=>!riderIds.has(x.riderId));s.mountain=s.mountain.filter(x=>!riderIds.has(x.riderId));s.sprint=s.sprint.filter(x=>!riderIds.has(x.riderId))}}t.teamIds=next;save();openTour(t.id,'teams')}
+}
+function openStageForm(t,stage=null){modal(`<div class="modal-head"><div class="header-main"><button id="stageFormBack" type="button" class="icon back-btn">‹</button><h2>${stage?'Etappe bearbeiten':'Etappe anlegen'}</h2></div><button data-close class="icon">×</button></div><form id="stageForm"><label>Etappenname<input id="stageName" value="${esc(stage?.name||'')}" placeholder="Etappe 1" required></label><label>Datum<input id="stageDate" type="date" value="${stage?.date||''}"></label><div class="actions"><button class="primary">Speichern</button>${stage?'<button type="button" id="deleteStageForm" class="danger">Etappe löschen</button>':''}</div></form>`);$('#stageFormBack').onclick=()=>openTour(t.id,'stages');$('#stageForm').onsubmit=e=>{e.preventDefault();if(stage){stage.name=$('#stageName').value.trim();stage.date=$('#stageDate').value}else t.stages.push({id:uid(),name:$('#stageName').value.trim(),date:$('#stageDate').value,results:[],mountain:[],sprint:[],autoPlan:''});save();openTour(t.id,'stages')};if(stage)$('#deleteStageForm').onclick=()=>deleteStage(t,stage)}
+function renderTours(){
+ const t=activeTour(),riderCount=state.teamPool.reduce((n,x)=>n+x.riders.length,0);
+ $('#view-tours').innerHTML=`<div class="page-head"><div class="page-head-copy"><div class="eyebrow">MEINE RUNDFAHRTEN</div><h2>Touren</h2></div><div class="page-actions"><button id="openBackup" class="secondary">Backup</button><button id="openPool" class="secondary">Team-Pool</button><button id="newTour" class="primary">+ Tour</button></div></div><article class="pool-overview"><div class="pool-overview-icon">♟</div><div><h3>Zentrale Teams</h3><p class="muted">${state.teamPool.length} Teams · ${riderCount} Fahrer</p></div><button id="openPoolCard" class="secondary">Verwalten</button></article>${state.tours.length?`<div class="tour-switcher"><label for="tourSelect">Aktive Tour</label><select id="tourSelect">${state.tours.map(x=>`<option value="${x.id}" ${x.id===t?.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div><article class="tour-dashboard"><div class="dashboard-head"><div class="dashboard-head-copy"><h3>${esc(t.name)}</h3><p class="muted">Teams, Etappen und Wertungen verwalten</p></div><div class="dashboard-actions"><button id="editTour" class="secondary small-icon" aria-label="Tour bearbeiten" title="Tour bearbeiten">✎</button><button id="deleteTourQuick" class="danger small-icon" aria-label="Tour löschen" title="Tour löschen">⌫</button></div></div><div class="metric-grid"><div class="metric"><span>Teams</span><strong>${selectedTeams(t).length}</strong></div><div class="metric"><span>Fahrer</span><strong>${allRiders(t).length}</strong></div><div class="metric"><span>Etappen</span><strong>${t.stages.length}</strong></div></div><div class="tour-menu-grid"><button id="goTeams" class="tour-menu-button"><b>♟</b><span>Teams</span></button><button id="goStages" class="tour-menu-button"><b>▤</b><span>Etappen</span></button><button id="goOverall" class="tour-menu-button"><b>★</b><span>Wertungen</span></button></div></article>`:'<div class="empty"><h3>Noch keine Tour</h3><p>Lege zuerst eine Rundfahrt an. Teams kannst du unabhängig davon im Team-Pool verwalten.</p><button id="emptyNewTour" class="primary">+ Erste Tour erstellen</button></div>'}`;
+ $('#newTour').onclick=()=>openTourForm();$('#openBackup').onclick=openBackup;$('#openPool').onclick=openTeamPool;$('#openPoolCard').onclick=openTeamPool;
+ if($('#emptyNewTour'))$('#emptyNewTour').onclick=()=>openTourForm();
+ if($('#tourSelect'))$('#tourSelect').onchange=e=>{state.activeTourId=e.target.value;save()};
+ if(t){$('#goTeams').onclick=()=>openTour(t.id,'teams');$('#goStages').onclick=()=>openTour(t.id,'stages');$('#goOverall').onclick=()=>openTour(t.id,'overall');$('#editTour').onclick=()=>openTourForm(t);$('#deleteTourQuick').onclick=()=>deleteTour(t)}
+}
+function openTour(id,tab='teams'){const t=state.tours.find(x=>x.id===id);if(!t)return;modal(`<div class="full-head"><div class="header-main"><button id="tourBack" class="icon back-btn">‹</button><div class="header-title"><div class="eyebrow">TOUR</div><h2>${esc(t.name)}</h2></div></div><div class="header-actions"><button id="tourEdit" class="icon edit-btn">✎</button><button id="tourDelete" class="icon delete-btn">⌫</button><button data-close class="icon">×</button></div></div><div class="full-tabs"><button data-tourtab="teams" class="tab">Teams</button><button data-tourtab="stages" class="tab">Etappen</button><button data-tourtab="overall" class="tab">Gesamt</button></div><div id="tourBody" class="full-body"></div>`,true);$('#tourBack').onclick=()=>{closeModal();show('tours')};$('#tourEdit').onclick=()=>openTourForm(t);$('#tourDelete').onclick=()=>deleteTour(t);$$('[data-tourtab]').forEach(b=>b.onclick=()=>drawTourTab(t,b.dataset.tourtab));drawTourTab(t,tab)}
+function drawTourTab(t,tab){
+ $$('[data-tourtab]').forEach(b=>b.classList.toggle('active',b.dataset.tourtab===tab));const root=$('#tourBody');
+ if(tab==='teams'){
+  const teams=selectedTeams(t);root.innerHTML=`<div class="section-head"><div><h3>Teilnehmende Teams</h3><p class="muted">${teams.length} von ${state.teamPool.length} Teams ausgewählt</p></div><div class="compact-actions"><button id="editPoolFromTour" class="secondary">Pool bearbeiten</button><button id="selectTeams" class="primary">Teams auswählen</button></div></div>${teams.map(team=>teamCardHtml(team,false,true)).join('')||'<div class="empty"><h3>Noch keine Teams ausgewählt</h3><p>Wähle Teams aus deinem zentralen Pool aus.</p><button id="selectTeamsEmpty" class="primary">Teams auswählen</button></div>'}`;
+  $('#selectTeams').onclick=()=>openTeamSelector(t);$('#editPoolFromTour').onclick=openTeamPool;if($('#selectTeamsEmpty'))$('#selectTeamsEmpty').onclick=()=>openTeamSelector(t)
+ }else if(tab==='stages'){
+  root.innerHTML=`<div class="section-head"><div><h3>Etappen</h3><p class="muted">Jede Etappe kann geöffnet, bearbeitet oder gelöscht werden.</p></div><button id="addStage" class="primary">+ Etappe</button></div>${t.stages.map((s,i)=>{const manual=s.results.filter(x=>!x.auto).length,auto=s.results.filter(x=>x.auto).length;return `<article class="stage-list-item"><button data-open-stage="${s.id}" class="stage-open"><small class="muted">Etappe ${i+1}${s.date?' · '+esc(s.date):''}</small><h3>${esc(s.name)}</h3><span class="muted">${manual} manuell · ${auto} automatisch · ${s.mountain.length} Berg · ${s.sprint.length} Sprint</span></button><div class="stage-actions"><button data-edit-stage="${s.id}" class="edit-btn" aria-label="Bearbeiten">✎</button><button data-delete-stage="${s.id}" class="delete-btn" aria-label="Löschen">⌫</button></div></article>`}).join('')||'<div class="empty">Noch keine Etappe.</div>'}`;
+  $('#addStage').onclick=()=>openStageForm(t);$$('[data-open-stage]').forEach(b=>b.onclick=()=>openStage(t,t.stages.find(x=>x.id===b.dataset.openStage),'stage'));$$('[data-edit-stage]').forEach(b=>b.onclick=()=>openStageForm(t,t.stages.find(x=>x.id===b.dataset.editStage)));$$('[data-delete-stage]').forEach(b=>b.onclick=()=>deleteStage(t,t.stages.find(x=>x.id===b.dataset.deleteStage)))
+ }else drawOverall(t,root)
+}
+function riderName(t,id){return allRiders(t).find(r=>r.id===id)?.name||'Unbekannt'}
+function teamName(t,id){return allRiders(t).find(r=>r.id===id)?.teamName||''}
+function fmtTime(sec){sec=Math.max(0,Math.round(sec||0));const h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;return `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+function fmtGap(sec){sec=Math.max(0,Math.round(sec||0));const m=Math.floor(sec/60),s=sec%60;return `+${m?m+':':''}${String(s).padStart(2,'0')}`}
+function sortStageResults(rows){return [...rows].sort((a,b)=>{if(a.time!==b.time)return a.time-b.time;if(!!a.auto!==!!b.auto)return a.auto?1:-1;return (a.autoOrder||0)-(b.autoOrder||0)})}
+function resultCounts(s){return{manual:s.results.filter(x=>!x.auto).length,auto:s.results.filter(x=>x.auto).length,total:s.results.length}}
+function parseTimeToken(raw){
+ const clean=String(raw||'').trim().replace(/^\+/,'').replace(/\s/g,'');
+ if(!clean)return NaN;
+ if(/^\d+$/.test(clean))return +clean*60;
+ const parts=clean.split(':').map(Number);if(parts.some(x=>!Number.isFinite(x)||x<0))return NaN;
+ if(parts.length===2)return parts[0]*60+parts[1];
+ if(parts.length===3)return parts[0]*3600+parts[1]*60+parts[2];
+ return NaN
+}
+function parseAutoPlan(text,remainingCount){
+ const lines=String(text||'').split(/\n+/).map(x=>x.trim()).filter(x=>x&&!x.startsWith('#')),groups=[];let used=0,restSeen=false;
+ if(!lines.length)throw new Error('Bitte mindestens eine Gruppe eintragen.');
+ for(const original of lines){
+  const line=original.replace(/[=;]/g,' ').replace(/\s+/g,' ').trim();
+  const timeMatch=line.match(/\+?\d+(?::\d{1,2}){1,2}/);if(!timeMatch)throw new Error(`Keine gültige Zeit in „${original}“.`);
+  const gap=parseTimeToken(timeMatch[0]);if(!Number.isFinite(gap))throw new Error(`Ungültige Zeit in „${original}“.`);
+  const isRest=/\b(rest|alle|übrig|restliche|restlichen)\b/i.test(line);
+  let count;
+  if(isRest){if(restSeen)throw new Error('„Rest“ darf nur einmal vorkommen.');restSeen=true;count=remainingCount-used}
+  else{const countMatch=line.match(/\d+/);if(!countMatch)throw new Error(`Keine Fahrerzahl in „${original}“.`);count=+countMatch[0]}
+  if(!Number.isInteger(count)||count<0)throw new Error(`Ungültige Fahrerzahl in „${original}“.`);
+  if(count===0)continue;used+=count;if(used>remainingCount)throw new Error(`Die Gruppen enthalten ${used} Fahrer, aber nur ${remainingCount} sind ohne manuelle Zeit.`);
+  groups.push({count,gap,label:original})
+ }
+ if(used<remainingCount)throw new Error(`Noch ${remainingCount-used} Fahrer ohne Zeit. Ergänze z. B. „Rest +8:00“.`);
+ return groups
+}
+function openAutoTimes(t,s){
+ const riders=allRiders(t),manual=s.results.filter(x=>!x.auto),manualIds=new Set(manual.map(x=>x.riderId)),remaining=riders.filter(r=>!manualIds.has(r.id)),leader=manual.length?Math.min(...manual.map(x=>x.time)):null,lastGap=leader===null?0:Math.max(...manual.map(x=>x.time))-leader;
+ if(leader===null){alert('Trage zuerst mindestens den Etappensieger mit Siegerzeit ein.');return}
+ const previous=s.autoPlan||`${Math.min(10,remaining.length)} +${fmtGap(Math.max(lastGap,120)).slice(1)}
+${remaining.length>10?'Rest +'+fmtGap(Math.max(lastGap+180,300)).slice(1):''}`.trim();
+ modal(`<div class="modal-head"><div class="header-main"><button id="autoBack" type="button" class="icon back-btn">‹</button><div><div class="eyebrow">RESTFELD</div><h2>Automatische Zeiten</h2></div></div><button data-close class="icon">×</button></div><div class="auto-summary"><div><span>Manuell</span><strong>${manual.length}</strong></div><div><span>Ohne Zeit</span><strong>${remaining.length}</strong></div><div><span>Letzter manueller Rückstand</span><strong>${fmtGap(lastGap)}</strong></div></div>${remaining.length?`<form id="autoForm"><label>Zeitgruppen<textarea id="autoPlan" rows="7" spellcheck="false" placeholder="10 +2:30
+10 +5:00
+Rest +8:00">${esc(previous)}</textarea></label><div class="format-help"><b>So funktioniert es:</b><code>10 +2:30</code> = die ersten 10 noch offenen Fahrer erhalten +2:30. Danach folgt die nächste Zeile. <code>Rest +8:00</code> füllt alle übrigen Fahrer. Reihenfolge: Teams und Fahrer aus deinem Team-Pool.</div><details class="remaining-list"><summary>${remaining.length} Fahrer werden automatisch eingetragen</summary><div>${remaining.map((r,i)=>`<span>${i+1}. ${esc(r.name)} <small>${esc(r.teamName)}</small></span>`).join('')}</div></details><div id="autoMessage" class="form-message" aria-live="polite"></div><div class="actions"><button class="primary">Restfeld eintragen</button>${s.results.some(x=>x.auto)?'<button type="button" id="deleteAuto" class="danger">Automatische Zeiten löschen</button>':''}</div></form>`:`<div class="success-box">Alle ${riders.length} Fahrer besitzen bereits eine manuelle Zeit.</div><div class="actions">${s.results.some(x=>x.auto)?'<button id="deleteAuto" class="danger">Automatische Zeiten löschen</button>':''}</div>`}`);
+ $('#autoBack').onclick=()=>openStage(t,s,'stage');
+ if($('#autoForm'))$('#autoForm').onsubmit=e=>{e.preventDefault();const msg=$('#autoMessage');try{const groups=parseAutoPlan($('#autoPlan').value,remaining.length);for(const g of groups)if(g.gap<lastGap)throw new Error(`Die automatische Zeit ${fmtGap(g.gap)} liegt vor dem letzten manuell eingetragenen Fahrer (${fmtGap(lastGap)}).`);s.results=s.results.filter(x=>!x.auto);let index=0,order=0;groups.forEach((g,groupIndex)=>{for(let i=0;i<g.count;i++){const r=remaining[index++];s.results.push({riderId:r.id,time:leader+g.gap,auto:true,autoGroup:groupIndex+1,autoOrder:order++})}});s.autoPlan=$('#autoPlan').value.trim();save();openStage(t,s,'stage')}catch(err){msg.innerHTML=`<div class="error-box">${esc(err.message||'Eingabe konnte nicht verarbeitet werden.')}</div>`}};
+ if($('#deleteAuto'))$('#deleteAuto').onclick=()=>{if(confirm('Alle automatisch erzeugten Zeiten dieser Etappe löschen?')){s.results=s.results.filter(x=>!x.auto);s.autoPlan='';save();openStage(t,s,'stage')}}
+}
+function orderedStages(t){return [...t.stages]}
+function gcAfter(t,stage){const stages=orderedStages(t).slice(0,orderedStages(t).indexOf(stage)+1),riders=allRiders(t),rows=[];for(const r of riders){let total=0,ok=true;for(const s of stages){const e=s.results.find(x=>x.riderId===r.id);if(!e){ok=false;break}total+=e.time}if(ok&&stages.length)rows.push({riderId:r.id,time:total})}return rows.sort((a,b)=>a.time-b.time)}
+function pointsAfter(t,stage,key){const stages=orderedStages(t).slice(0,orderedStages(t).indexOf(stage)+1),map=new Map();for(const s of stages)for(const e of s[key])map.set(e.riderId,(map.get(e.riderId)||0)+e.points);return [...map].map(([riderId,points])=>({riderId,points})).sort((a,b)=>b.points-a.points)}
+function chooseRiderByTeam(t,cb,onBack){modal(`<div class="modal-head"><div class="header-main"><button id="riderPickerBack" type="button" class="icon back-btn">‹</button><h2>Fahrer auswählen</h2></div><button data-close class="icon">×</button></div>${selectedTeams(t).map(team=>`<section class="picker-team"><h3>${esc(team.name)}</h3>${team.riders.map(r=>`<button data-pick="${r.id}" class="picker-rider"><strong>${esc(r.name)}</strong><span class="muted"> · ${roleLabel[r.role]}</span></button>`).join('')||'<p class="muted">Keine Fahrer.</p>'}</section>`).join('')||'<div class="empty">Wähle zuerst Teams für diese Tour aus und lege im Team-Pool Fahrer an.</div>'}`);$('#riderPickerBack').onclick=()=>onBack?onBack():closeModal();$$('[data-pick]').forEach(b=>b.onclick=()=>cb(b.dataset.pick))}
+function addStageResult(t,s){chooseRiderByTeam(t,id=>editStageResult(t,s,id),()=>openStage(t,s,'stage'))}
+function editStageResult(t,s,id){
+ const existing=s.results.find(x=>x.riderId===id),ordered=sortStageResults(s.results),stageLeader=ordered[0],isLeader=!stageLeader||stageLeader.riderId===id,leader=isLeader?null:stageLeader;
+ modal(`<div class="modal-head"><div class="header-main"><button id="resultBack" type="button" class="icon back-btn">‹</button><div><div class="eyebrow">${esc(riderName(t,id))}</div><h2>${isLeader?'Siegerzeit':'Zeitabstand'}</h2></div></div><button data-close class="icon">×</button></div><form id="resultForm">${isLeader?`<div class="grid2"><label>Stunden<input id="h" type="number" min="0" value="${existing?Math.floor(existing.time/3600):0}"></label><label>Minuten<input id="m" type="number" min="0" max="59" value="${existing?Math.floor(existing.time%3600/60):0}"></label></div><label>Sekunden<input id="s" type="number" min="0" max="59" value="${existing?existing.time%60:0}"></label>`:`<p class="muted">Nur Rückstand zum Etappensieger eintragen.</p><label>Minuten<input id="m" type="number" min="0" value="${existing?Math.floor(Math.max(0,existing.time-leader.time)/60):0}"></label><label>Sekunden<input id="s" type="number" min="0" max="59" value="${existing?Math.max(0,existing.time-leader.time)%60:0}"></label>`}<div class="actions"><button class="primary">Speichern</button>${existing?'<button type="button" id="deleteResult" class="danger">Zeit löschen</button>':''}</div></form>`);
+ $('#resultBack').onclick=()=>openStage(t,s,'stage');$('#resultForm').onsubmit=e=>{e.preventDefault();let time;if(isLeader)time=(+$('#h').value||0)*3600+(+$('#m').value||0)*60+(+$('#s').value||0);else time=leader.time+(+$('#m').value||0)*60+(+$('#s').value||0);if(isLeader&&existing){const delta=time-existing.time;s.results=s.results.map(x=>x.riderId===id?x:{...x,time:Math.max(0,x.time+delta)})}s.results=s.results.filter(x=>x.riderId!==id);s.results.push({riderId:id,time,auto:false,autoOrder:existing?.autoOrder||0});save();openStage(t,s,'stage')};if(existing)$('#deleteResult').onclick=()=>deleteStageEntry(t,s,'results',id)
+}
+function addPoints(t,s,key){chooseRiderByTeam(t,id=>editPoints(t,s,key,id),()=>openStage(t,s,key))}
+function editPoints(t,s,key,id){const ex=s[key].find(x=>x.riderId===id);modal(`<div class="modal-head"><div class="header-main"><button id="pointsBack" type="button" class="icon back-btn">‹</button><div><div class="eyebrow">${esc(riderName(t,id))}</div><h2>${key==='mountain'?'Bergpunkte':'Sprintpunkte'}</h2></div></div><button data-close class="icon">×</button></div><form id="pointsForm"><label>Punkte<input id="points" type="number" min="0" value="${ex?.points||0}"></label><div class="actions"><button class="primary">Speichern</button>${ex?'<button type="button" id="deletePoints" class="danger">Punkte löschen</button>':''}</div></form>`);$('#pointsBack').onclick=()=>openStage(t,s,key);$('#pointsForm').onsubmit=e=>{e.preventDefault();const p=+$('#points').value||0;s[key]=s[key].filter(x=>x.riderId!==id);if(p>0)s[key].push({riderId:id,points:p});save();openStage(t,s,key)};if(ex)$('#deletePoints').onclick=()=>deleteStageEntry(t,s,key,id)}
+function openStage(t,s,tab='stage'){modal(`<div class="full-head"><div class="header-main"><button id="stageBack" class="icon back-btn">‹</button><div class="header-title"><div class="eyebrow">ETAPPE</div><h2>${esc(s.name)}</h2></div></div><div class="header-actions"><button id="stageEdit" class="icon edit-btn">✎</button><button id="stageDelete" class="icon delete-btn">⌫</button><button data-close class="icon">×</button></div></div><div class="full-tabs"><button data-stagetab="overall" class="tab">Gesamt</button><button data-stagetab="stage" class="tab">Etappe</button><button data-stagetab="mountain" class="tab">Berg</button><button data-stagetab="sprint" class="tab">Sprint</button></div><div id="stageBody" class="full-body"></div>`,true);$('#stageBack').onclick=()=>openTour(t.id,'stages');$('#stageEdit').onclick=()=>openStageForm(t,s);$('#stageDelete').onclick=()=>deleteStage(t,s);$$('[data-stagetab]').forEach(b=>b.onclick=()=>drawStageTab(t,s,b.dataset.stagetab));drawStageTab(t,s,tab)}
+function rowsHtml(t,rows,type,editable=false,key='',stage=null){if(!rows.length)return '<div class="empty">Noch keine Einträge.</div>';const leader=type==='time'?rows[0].time:0;return rows.map((r,i)=>`<div class="class-row ${editable?'editable':''} ${r.auto?'auto-row':''}"><div class="rank">${i+1}</div><div><strong>${esc(riderName(t,r.riderId))}${r.auto?' <span class="auto-badge">AUTO</span>':''}</strong><small>${esc(teamName(t,r.riderId))}${r.auto?' · automatisch':''}</small></div><div class="value">${type==='time'?(i===0?fmtTime(r.time):fmtGap(r.time-leader)):r.points+' P'}</div>${editable?`<div class="entry-actions"><button data-edit-entry="${r.riderId}" data-entry-key="${key}" class="edit-btn" aria-label="Bearbeiten">✎</button><button data-delete-entry="${r.riderId}" data-entry-key="${key}" class="delete-btn" aria-label="Löschen">⌫</button></div>`:''}</div>`).join('')}
+function drawStageTab(t,s,tab){
+ $$('[data-stagetab]').forEach(b=>b.classList.toggle('active',b.dataset.stagetab===tab));const root=$('#stageBody');
+ if(tab==='stage'){
+  const rows=sortStageResults(s.results),counts=resultCounts(s),total=allRiders(t).length;root.innerHTML=`<article class="card"><div class="section-head"><div><h3>Etappenergebnis</h3><p class="muted">Trage nur die wichtigen Fahrer manuell ein. Das Restfeld kann anschließend gruppenweise automatisch gewertet werden.</p></div><div class="compact-actions"><button id="clearResults" class="danger">Alle löschen</button><button id="addResult" class="primary">+ Zeit</button></div></div><div class="result-status"><span><b>${counts.manual}</b> manuell</span><span><b>${counts.auto}</b> automatisch</span><span><b>${counts.total}/${total}</b> gewertet</span></div><div class="auto-tool"><div><b>Restliche Fahrer automatisch eintragen</b><p>Zum Beispiel: 10 Fahrer +2:30, nächste 10 +5:00, Rest +8:00.</p></div><button id="autoResults" class="secondary">Zeitgruppen öffnen</button></div>${rowsHtml(t,rows,'time',true,'results',s)}</article>`;$('#addResult').onclick=()=>addStageResult(t,s);$('#autoResults').onclick=()=>openAutoTimes(t,s);$('#clearResults').onclick=()=>{if(s.results.length&&confirm('Alle Etappenzeiten dieser Etappe löschen?')){s.results=[];s.autoPlan='';save();openStage(t,s,'stage')}}
+ }else if(tab==='mountain'||tab==='sprint'){
+  const rows=[...s[tab]].sort((a,b)=>b.points-a.points);root.innerHTML=`<article class="card"><div class="section-head"><div><h3>${tab==='mountain'?'Bergwertung':'Sprintwertung'}</h3><p class="muted">Punkte jederzeit ändern oder löschen.</p></div><div class="compact-actions"><button id="clearPoints" class="danger">Alle löschen</button><button id="addPts" class="primary">+ Punkte</button></div></div>${rowsHtml(t,rows,'points',true,tab,s)}</article>`;$('#addPts').onclick=()=>addPoints(t,s,tab);$('#clearPoints').onclick=()=>{if(s[tab].length&&confirm(`Alle ${tab==='mountain'?'Berg':'Sprint'}punkte dieser Etappe löschen?`)){s[tab]=[];save();openStage(t,s,tab)}}
+ }else{const gc=gcAfter(t,s),m=pointsAfter(t,s,'mountain'),sp=pointsAfter(t,s,'sprint');root.innerHTML=`<article class="card"><h3>Gesamtklassement</h3>${rowsHtml(t,gc,'time')}</article><article class="card"><h3>Gesamt-Bergwertung</h3>${rowsHtml(t,m,'points')}</article><article class="card"><h3>Gesamt-Sprintwertung</h3>${rowsHtml(t,sp,'points')}</article>`}
+ $$('[data-edit-entry]').forEach(b=>b.onclick=()=>{const key=b.dataset.entryKey,id=b.dataset.editEntry;if(key==='results')editStageResult(t,s,id);else editPoints(t,s,key,id)});
+ $$('[data-delete-entry]').forEach(b=>b.onclick=()=>deleteStageEntry(t,s,b.dataset.entryKey,b.dataset.deleteEntry))
+}
+function drawOverall(t,root){const last=[...t.stages].reverse().find(s=>s.results.length||s.mountain.length||s.sprint.length);if(!last){root.innerHTML='<div class="empty">Noch keine Wertungen.</div>';return}root.innerHTML=`<article class="card"><h3>Gesamt nach ${esc(last.name)}</h3>${rowsHtml(t,gcAfter(t,last),'time')}</article><article class="card"><h3>Bergwertung gesamt</h3>${rowsHtml(t,pointsAfter(t,last,'mountain'),'points')}</article><article class="card"><h3>Sprintwertung gesamt</h3>${rowsHtml(t,pointsAfter(t,last,'sprint'),'points')}</article>`}
+function renderStats(){const t=totals();$('#view-stats').innerHTML=`<div class="section-head"><div><div class="eyebrow">STATISTIK</div><h2>Dein Fortschritt</h2></div></div><div class="stats"><div class="stat"><small>Kilometer</small><strong>${t.km.toFixed(0)}</strong></div><div class="stat"><small>Höhenmeter</small><strong>${t.hm.toFixed(0)}</strong></div><div class="stat"><small>Fahrzeit</small><strong>${Math.floor(t.min/60)} h</strong></div></div>`}
+renderAll();
+</script>
+</body></html>
